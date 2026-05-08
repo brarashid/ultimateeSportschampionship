@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate eSport Championship</title>
+  <meta name="description" content="Where Champions Rise and Legends Are Made — Africa's Premier Esports Tournament" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" data-scroll="home">
+        <div class="nav-logo-icon">
+          <i data-lucide="zap" style="width:20px;height:20px;"></i>
+        </div>
+        <div class="nav-logo-text">UEC <span>2026</span></div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#registration" class="nav-link" data-section="registration">Registration</a></li>
+        <li><a href="#games" class="nav-link" data-section="games">Games</a></li>
+        <li><a href="#fixtures" class="nav-link" data-section="fixtures">Fixtures</a></li>
+        <li><a href="#livestream" class="nav-link" data-section="livestream">Live Stream</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <i data-lucide="sun" id="theme-icon" style="width:18px;height:18px;"></i>
+        </button>
+        <a href="#registration" class="nav-cta" data-scroll="registration">Register Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home" class="mobile-link active" data-section="home">Home</a>
+      <a href="#about" class="mobile-link" data-section="about">About</a>
+      <a href="#registration" class="mobile-link" data-section="registration">Registration</a>
+      <a href="#games" class="mobile-link" data-section="games">Games</a>
+      <a href="#fixtures" class="mobile-link" data-section="fixtures">Fixtures</a>
+      <a href="#livestream" class="mobile-link" data-section="livestream">Live Stream</a>
+      <a href="#contact" class="mobile-link" data-section="contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="home">
+    <!-- Fallback animated BG (video not available in static demo) -->
+    <div class="hero-bg-fallback">
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <div class="live-dot"></div>
+        Registration Open — Season 2026
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line1">Ultimate</span>
+        <span class="line2">eSports</span>
+        <span class="line3">Championship</span>
+      </h1>
+
+      <p class="hero-tagline">Where Champions Rise and Legends Are Made — Africa's most prestigious gaming tournament returns with $50,000 on the line.</p>
+
+      <div class="hero-buttons">
+        <a href="#registration" class="btn-primary" data-scroll="registration">
+          <i data-lucide="user-plus" style="width:16px;height:16px;"></i>
+          Register Now
+        </a>
+        <a href="#fixtures" class="btn-secondary" data-scroll="fixtures">
+          <i data-lucide="calendar" style="width:16px;height:16px;"></i>
+          View Fixtures
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="1200">0</span>
+          <span class="hero-stat-label">Players</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="150">0</span>
+          <span class="hero-stat-label">Teams</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" id="prize-stat">$50,000</span>
+          <span class="hero-stat-label">Prize Pool</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="4">0</span>
+          <span class="hero-stat-label">Games</span>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-wrap">
+        <div class="countdown-label">Tournament Begins In</div>
+        <div class="countdown">
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-days">00</span>
+            <span class="countdown-seg">Days</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-hours">00</span>
+            <span class="countdown-seg">Hrs</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-mins">00</span>
+            <span class="countdown-seg">Min</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-number" id="cd-secs">00</span>
+            <span class="countdown-seg">Sec</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Games -->
+      <div class="hero-games">
+        <span class="hero-game-tag featured">
+          <span class="game-dot" style="background:#ffd700"></span>
+          FIFA 2026
+        </span>
+        <span class="hero-game-tag">
+          <span class="game-dot" style="background:#00d4ff"></span>
+          Call of Duty
+        </span>
+        <span class="hero-game-tag">
+          <span class="game-dot" style="background:#a855f7"></span>
+          Fortnite
+        </span>
+        <span class="hero-game-tag">
+          <span class="game-dot" style="background:#ff3a3a"></span>
+          Mortal Kombat
+        </span>
+      </div>
+    </div>
+
+    <!-- Announcements ticker -->
+    <div class="announcements">
+      <div class="announcement-inner">
+        <div class="announcement-label">Live</div>
+        <div class="ticker-wrap">
+          <div class="ticker">
+            <span class="ticker-item">Registration closes July 15, 2026 — Don't miss your slot</span>
+            <span class="ticker-item">Qualifier rounds begin August 1, 2026 in Accra, Ghana</span>
+            <span class="ticker-item">FIFA 2026 slots filling fast — only 30 spots remaining</span>
+            <span class="ticker-item">New sponsorship packages available — Contact us today</span>
+            <span class="ticker-item">Group stage draw ceremony on July 20, 2026 — Watch live</span>
+            <span class="ticker-item">Prize pool increased to $50,000 — Apply now!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsor strip (after hero) -->
+  <div class="hero-sponsors">
+    <div class="container">
+      <div class="sponsors-row">
+        <span class="sponsor-logo">ALIENWARE</span>
+        <span class="sponsor-logo">RAZER</span>
+        <span class="sponsor-logo">NVIDIA</span>
+        <span class="sponsor-logo">MTN</span>
+        <span class="sponsor-logo">VODAFONE</span>
+        <span class="sponsor-logo">RED BULL</span>
+        <span class="sponsor-logo">CORSAIR</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">About The Tournament</span>
+        <h2 class="section-title">Built For Africa's Elite</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">A premier competitive gaming platform that celebrates skill, strategy, and the spirit of champions across the continent.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="reveal-left">
+          <div class="about-text">
+            <h3>What Is UEC 2026?</h3>
+            <p>The Ultimate eSport Championship is Africa's most prestigious gaming tournament, bringing together the continent's finest players across four flagship titles. Founded in 2020, UEC has grown into a multi-city event drawing thousands of spectators and hundreds of professional players.</p>
+            <p>This year, Accra, Ghana hosts the grand finals — a culmination of months of qualifiers, regional battles, and relentless competition. UEC 2026 represents not just a tournament, but a movement to position Africa at the global esports stage.</p>
+
+            <div class="about-mission">
+              <h4>Our Mission</h4>
+              <p>To discover, nurture, and celebrate African gaming talent by providing a world-class competitive platform with fair rules, transparent judging, and real financial rewards.</p>
+            </div>
+
+            <div class="about-mission" style="margin-top:16px;">
+              <h4>Our Vision</h4>
+              <p>To become the foremost esports institution in Africa — producing players who compete on the global stage and inspiring the next generation of digital athletes.</p>
+            </div>
+          </div>
+
+          <div class="organizer-card" style="margin-top:24px;">
+            <div class="organizer-avatar">UEC</div>
+            <div class="organizer-info">
+              <h4>Organized by GameArena Africa Ltd.</h4>
+              <p>Official organizer — Est. 2018, Accra, Ghana</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <div class="about-format">
+            <h3>Tournament Format</h3>
+            <div class="format-steps">
+              <div class="format-step">
+                <span class="step-num">01</span>
+                <div class="step-content">
+                  <h4>Group Stage</h4>
+                  <p>150+ teams divided into groups of 8. Each team plays round-robin matches. Top 2 from each group advance to knockouts.</p>
+                </div>
+              </div>
+              <div class="format-step">
+                <span class="step-num">02</span>
+                <div class="step-content">
+                  <h4>Knockout Stage</h4>
+                  <p>Single-elimination bracket with best-of-3 series. Losers are eliminated; winners advance toward the grand final.</p>
+                </div>
+              </div>
+              <div class="format-step">
+                <span class="step-num">03</span>
+                <div class="step-content">
+                  <h4>Grand Finals</h4>
+                  <p>Best-of-5 showdown on the main stage in Accra. Live audience, full broadcast, and $50,000 in prizes awarded.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rules-list">
+              <h4>Rules Summary</h4>
+              <ul>
+                <li>Players must be 16+ and present valid ID during registration</li>
+                <li>All matches are supervised by certified referees</li>
+                <li>Zero tolerance for cheating, hacks, or unsportsmanlike conduct</li>
+                <li>Players must check in 30 minutes before their scheduled match</li>
+                <li>Disconnections handled per game-specific protocols</li>
+                <li>Prize money disbursed within 14 days of tournament close</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REGISTRATION SECTION
+  ============================================================ -->
+  <section id="registration">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Join The Battle</span>
+        <h2 class="section-title">Register To Compete</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Secure your spot in Africa's biggest esports event. Limited slots available per game title.</p>
+      </div>
+
+      <div class="registration-grid">
+        <!-- Form -->
+        <div class="reg-form-wrap reveal-left">
+          <h3>Player / Team Registration</h3>
+          <form id="reg-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="player-name">Player / Team Name</label>
+                <input type="text" id="player-name" class="form-input" placeholder="e.g. Phoenix Rising" />
+                <span class="form-error" id="err-name">Name is required</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="game-select">Select Game</label>
+                <div class="select-wrap">
+                  <select id="game-select" class="form-select">
+                    <option value="">Choose a game...</option>
+                    <option value="fifa">FIFA 2026</option>
+                    <option value="cod">Call of Duty</option>
+                    <option value="fortnite">Fortnite</option>
+                    <option value="mk">Mortal Kombat</option>
+                  </select>
+                </div>
+                <span class="form-error" id="err-game">Please select a game</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="reg-email">Email Address</label>
+              <input type="email" id="reg-email" class="form-input" placeholder="champion@email.com" />
+              <span class="form-error" id="err-email">Enter a valid email address</span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="reg-phone">Phone Number</label>
+                <input type="tel" id="reg-phone" class="form-input" placeholder="+233 XX XXX XXXX" />
+                <span class="form-error" id="err-phone">Valid phone number required</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-location">Location / City</label>
+                <input type="text" id="reg-location" class="form-input" placeholder="e.g. Kumasi, Ghana" />
+                <span class="form-error" id="err-location">Location is required</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="team-type">Participation Type</label>
+              <div class="select-wrap">
+                <select id="team-type" class="form-select">
+                  <option value="solo">Solo Player</option>
+                  <option value="team">Full Team</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i data-lucide="send" style="width:16px;height:16px;"></i>
+              Submit Registration
+            </button>
+          </form>
+        </div>
+
+        <!-- Sponsors -->
+        <div class="sponsors-wrap reveal-right">
+          <h3>Our Sponsors</h3>
+
+          <div class="sponsor-tier">
+            <div class="sponsor-tier-label gold">Gold Sponsors</div>
+            <div class="sponsor-logos">
+              <span class="sponsor-badge gold-tier">ALIENWARE</span>
+              <span class="sponsor-badge gold-tier">NVIDIA</span>
+              <span class="sponsor-badge gold-tier">RED BULL</span>
+            </div>
+          </div>
+
+          <div class="sponsor-tier">
+            <div class="sponsor-tier-label silver">Silver Sponsors</div>
+            <div class="sponsor-logos">
+              <span class="sponsor-badge silver-tier">RAZER</span>
+              <span class="sponsor-badge silver-tier">CORSAIR</span>
+              <span class="sponsor-badge silver-tier">MTN</span>
+            </div>
+          </div>
+
+          <div class="sponsor-tier">
+            <div class="sponsor-tier-label bronze">Bronze Sponsors</div>
+            <div class="sponsor-logos">
+              <span class="sponsor-badge">VODAFONE</span>
+              <span class="sponsor-badge">ACER</span>
+              <span class="sponsor-badge">LOGITECH</span>
+              <span class="sponsor-badge">HyperX</span>
+            </div>
+          </div>
+
+          <div class="sponsor-cta">
+            <h4>Become a Sponsor</h4>
+            <p>Reach 50,000+ engaged gaming fans across Africa. Packages start at $2,000.</p>
+            <a href="#contact" class="btn-outline-gold" data-scroll="contact">
+              <i data-lucide="handshake" style="width:14px;height:14px;"></i>
+              Get Sponsor Package
+            </a>
+          </div>
+
+          <!-- Quick info cards -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-align:center;">
+              <div style="font-family:'Bebas Neue';font-size:28px;color:var(--accent-gold);letter-spacing:1px;">July 15</div>
+              <div style="font-size:11px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;">Registration Deadline</div>
+            </div>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;text-align:center;">
+              <div style="font-family:'Bebas Neue';font-size:28px;color:var(--accent-cyan);letter-spacing:1px;">Aug 20</div>
+              <div style="font-size:11px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;">Grand Finals Day</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GAMES SECTION
+  ============================================================ -->
+  <section id="games">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Compete Across Titles</span>
+        <h2 class="section-title">Featured Games</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Four legendary titles, four paths to glory. Choose your weapon and prove your mastery.</p>
+      </div>
+
+      <div class="games-grid" id="games-grid">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Teams -->
+      <div class="teams-section reveal">
+        <h3>Registered Teams</h3>
+        <div class="teams-grid" id="teams-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Players -->
+      <div class="players-section reveal">
+        <h3>Featured Players</h3>
+        <div class="players-grid" id="players-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FIXTURES SECTION
+  ============================================================ -->
+  <section id="fixtures">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Schedule & Standings</span>
+        <h2 class="section-title">Fixtures & Leaderboard</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="fixtures-leaderboard-grid">
+        <!-- Fixtures -->
+        <div class="reveal-left">
+          <div class="fixtures-wrap">
+            <h3>Match Fixtures</h3>
+            <div class="fixture-filters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+              <button class="filter-btn" data-filter="live">Live</button>
+              <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            <div class="fixture-list" id="fixture-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="reveal-right">
+          <div class="leaderboard-wrap">
+            <h3>Leaderboard</h3>
+            <table class="leaderboard-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Team</th>
+                  <th>W</th>
+                  <th>L</th>
+                  <th>PTS</th>
+                </tr>
+              </thead>
+              <tbody id="leaderboard-body">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LIVE STREAM SECTION
+  ============================================================ -->
+  <section id="livestream">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Watch The Action</span>
+        <h2 class="section-title">Live Stream & News</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="stream-grid reveal">
+        <!-- Video Player -->
+        <div class="stream-player">
+          <div class="stream-header">
+            <h3>Main Stage — UEC 2026</h3>
+            <span class="live-badge">
+              <div class="live-dot"></div> Live
+            </span>
+          </div>
+          <div class="stream-iframe-wrap">
+            <!-- YouTube embed placeholder — replace src with actual live stream URL -->
+            <div class="stream-placeholder">
+              <i data-lucide="play-circle" style="width:64px;height:64px;"></i>
+              <p>Stream Goes Live on August 20, 2026</p>
+              <a href="https://www.youtube.com/@UECGaming" target="_blank" rel="noopener" class="btn-primary" style="font-size:12px;padding:10px 22px;">
+                <i data-lucide="youtube" style="width:14px;height:14px;"></i>
+                Subscribe on YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="schedule-wrap">
+          <h3>Broadcast Schedule</h3>
+          <div id="stream-schedule">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- News / Blog -->
+      <div class="section-header reveal" style="margin-top:80px;margin-bottom:40px;">
+        <span class="section-label">Latest Updates</span>
+        <h2 class="section-title" style="font-size:clamp(28px,4vw,48px);">News & Blog</h2>
+      </div>
+
+      <div class="news-grid" id="news-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Have questions about registration, sponsorship, or the tournament? We're here to help.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Info -->
+        <div class="contact-info reveal-left">
+          <h3>Let's Talk Championship</h3>
+          <p>Our team is available Monday to Friday, 9am–6pm GMT. For urgent match-day queries, use the emergency contact below.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i data-lucide="mail" style="width:18px;height:18px;"></i>
+              </div>
+              <div class="contact-item-info">
+                <h4>Email</h4>
+                <p>info@uecchampionship.gg</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i data-lucide="phone" style="width:18px;height:18px;"></i>
+              </div>
+              <div class="contact-item-info">
+                <h4>Phone</h4>
+                <p>+233 30 296 XXXX</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i data-lucide="map-pin" style="width:18px;height:18px;"></i>
+              </div>
+              <div class="contact-item-info">
+                <h4>Location</h4>
+                <p>GameArena HQ, Cantonments, Accra, Ghana</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i data-lucide="clock" style="width:18px;height:18px;"></i>
+              </div>
+              <div class="contact-item-info">
+                <h4>Working Hours</h4>
+                <p>Mon–Fri: 9:00 AM – 6:00 PM (GMT)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter/X">
+              <i data-lucide="twitter" style="width:18px;height:18px;"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i data-lucide="instagram" style="width:18px;height:18px;"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <i data-lucide="youtube" style="width:18px;height:18px;"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Discord">
+              <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i data-lucide="facebook" style="width:18px;height:18px;"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="TikTok">
+              <i data-lucide="video" style="width:18px;height:18px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap reveal-right">
+          <h3>Send A Message</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="c-name">Your Name</label>
+                <input type="text" id="c-name" class="form-input" placeholder="John Doe" />
+                <span class="form-error" id="cerr-name">Name is required</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="c-email">Email Address</label>
+                <input type="email" id="c-email" class="form-input" placeholder="you@email.com" />
+                <span class="form-error" id="cerr-email">Valid email required</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-subject">Subject</label>
+              <input type="text" id="c-subject" class="form-input" placeholder="e.g. Sponsorship Inquiry" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="c-message">Message</label>
+              <textarea id="c-message" class="form-textarea" placeholder="Tell us how we can help..."></textarea>
+              <span class="form-error" id="cerr-message">Message cannot be empty</span>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i data-lucide="send" style="width:16px;height:16px;"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="nav-logo-icon">
+              <i data-lucide="zap" style="width:20px;height:20px;"></i>
+            </div>
+            <div class="nav-logo-text">UEC <span>2026</span></div>
+          </div>
+          <p>Africa's premier esports championship — where the continent's greatest gaming talent meets on one legendary stage.</p>
+          <div class="social-links" style="margin-top:16px;">
+            <a href="#" class="social-link" style="width:36px;height:36px;"><i data-lucide="twitter" style="width:16px;height:16px;"></i></a>
+            <a href="#" class="social-link" style="width:36px;height:36px;"><i data-lucide="instagram" style="width:16px;height:16px;"></i></a>
+            <a href="#" class="social-link" style="width:36px;height:36px;"><i data-lucide="youtube" style="width:16px;height:16px;"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#fixtures">Fixtures</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tournament</h4>
+          <ul>
+            <li><a href="#games">FIFA 2026</a></li>
+            <li><a href="#games">Call of Duty</a></li>
+            <li><a href="#games">Fortnite</a></li>
+            <li><a href="#games">Mortal Kombat</a></li>
+            <li><a href="#fixtures">Leaderboard</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#livestream">Live Stream</a></li>
+            <li><a href="#livestream">News & Blog</a></li>
+            <li><a href="#contact">Sponsorship</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">Rules</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ultimate eSport Championship. All rights reserved. GameArena Africa Ltd.</p>
+        <p>Designed with precision for Africa's champions.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       GAME RULES MODAL
+  ============================================================ -->
+  <div class="modal-overlay" id="game-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close">
+        <i data-lucide="x" style="width:16px;height:16px;"></i>
+      </button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST CONTAINER
+  ============================================================ -->
+  <div id="toast-container"></div>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i data-lucide="arrow-up" style="width:18px;height:18px;"></i>
+  </button>
+
+  <!-- Main Script (loaded last so DOM is ready) -->
+  <script src="main.js"></script>
+</body>
+</html>
