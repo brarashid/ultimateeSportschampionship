@@ -12,10 +12,11 @@ const GAMES_DATA = [
     title: 'FC26',
     mode: '1v1 / 2v2',
     prize: '₵20,000',
-    players: 480,
+    players: 0,
     featured: true,
     color: '#ffd700',
     bg: 'linear-gradient(135deg,#1a1200,#332800)',
+    image: 'EA FC 26 1.png',
     description: 'The beautiful game goes digital. Compete in Africa\'s most competitive FIFA tournament with true-to-life gameplay and next-gen mechanics.',
     rules: [
       'Standard FC26 tournament settings apply',
@@ -30,11 +31,12 @@ const GAMES_DATA = [
     id: 'cod',
     title: 'Call of Duty',
     mode: '5v5 Team',
-    prize: '₵15,000',
-    players: 300,
+    prize: 'Coming Soon',
+    players: 0,
     featured: false,
     color: '#00d4ff',
     bg: 'linear-gradient(135deg,#001220,#002240)',
+    image: 'Call of Duty 4 Modern Warfare Remastered….jpg',
     description: 'Squad-based warfare on competitive multiplayer maps. Prove your tactical IQ and gunfight mechanics against the best.',
     rules: [
       'Team size: 5 players + 1 substitute',
@@ -49,30 +51,38 @@ const GAMES_DATA = [
     id: 'fortnite',
     title: 'Fortnite',
     mode: 'Solos / Duos',
-    prize: '₵10,000',
-    players: 240,
+    prize: 'Coming Soon',
+    players: 0,
     featured: false,
     color: '#a855f7',
     bg: 'linear-gradient(135deg,#130a2a,#220f44)',
-    description: 'Build, battle, and outlast the competition in high-stakes battle royale format with custom lobby settings.',
+    image: 'Fortnite.jpg',
+    description: 'Build, battle, and outlast the competition in high-stakes battle royale format with custom lobby settings. Whether you\'re dropping solo or locking in with a duo partner, this tournament tests your building speed, game sense, and clutch plays under pressure. Compete against Ghana\'s sharpest Fortnite players in a structured competitive format with live spectating.',
     rules: [
       'Custom lobby — no public match entries',
       'Placement and elimination point scoring system',
       'No teaming between separate competitors',
       'Default graphic settings for fairness',
       'Must use registered Epic Games account',
-      'Stream sniping results in immediate disqualification'
+      'Stream sniping results in immediate disqualification',
+      'Players must join lobby at least 10 minutes before match start',
+      'Any glitch or exploit abuse leads to immediate disqualification',
+      'Controller and keyboard/mouse both permitted',
+      'Players are responsible for their own stable internet connection',
+      'Match replays may be reviewed in case of disputes',
+      'Tournament organiser decisions on disputes are final'
     ]
   },
   {
     id: 'mk',
     title: 'Mortal Kombat',
     mode: '1v1 Fighter',
-    prize: '₵5,000',
-    players: 180,
+    prize: 'Coming Soon',
+    players: 0,
     featured: false,
     color: '#ff3a3a',
     bg: 'linear-gradient(135deg,#200000,#3d0000)',
+    image: 'Mortal Kombat 9.jpg',
     description: 'The ultimate fighting game showcase. Master your kombatant and execute perfect combos in high-pressure bracket play.',
     rules: [
       'Best of 3 games per set; best of 5 for semifinals and finals',
@@ -301,11 +311,11 @@ function renderGames() {
       <div class="game-thumb">
         <div class="game-thumb-placeholder" style="background:${g.bg}">
           <img
-            src="https://images.unsplash.com/photo-${g.id === 'fifa' ? '1575936123452-b67c3203c357' : g.id === 'cod' ? '1542751371-adc38448a05e' : g.id === 'fortnite' ? '1493711662062-fa541adb3fc8' : '1511512578047-dfb367046420'}?w=400&q=80&auto=format&fit=crop"
+            src="${g.image ? encodeURIComponent(g.image) : 'https://images.unsplash.com/photo-' + (g.id === 'fortnite' ? '1493711662062-fa541adb3fc8' : '1511512578047-dfb367046420') + '?w=400&q=80&auto=format&fit=crop'}"
             alt="${g.title}"
             loading="lazy"
             onerror="this.style.display='none'"
-            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"
+            style="width:100%;height:auto;display:block;"
           />
         </div>
         <div class="game-overlay"></div>
@@ -318,12 +328,9 @@ function renderGames() {
             <i data-lucide="users" style="width:12px;height:12px;"></i>
             ${g.mode}
           </span>
-          <span class="game-meta-item">
-            <i data-lucide="trophy" style="width:12px;height:12px;"></i>
-            Prize Pool
-          </span>
+          ${g.prize !== 'Coming Soon' ? `<span class="game-meta-item"><i data-lucide="trophy" style="width:12px;height:12px;"></i> Prize Pool</span>` : ''}
         </div>
-        <div class="game-prize">${g.prize}</div>
+        <div class="game-prize" ${g.prize === 'Coming Soon' ? 'style="color:var(--text-muted);font-size:14px;letter-spacing:2px;font-family:inherit;"' : ''}>${g.prize}</div>
         <p class="game-desc">${g.description}</p>
         <div class="game-card-footer">
           <button class="btn-rules" onclick="event.stopPropagation();openGameModal('${g.id}')">View Rules</button>
@@ -511,7 +518,7 @@ function openGameModal(gameId) {
   const content = document.getElementById('modal-content');
   content.innerHTML = `
     <div class="modal-game-title">${game.title}</div>
-    <div class="modal-game-prize">${game.prize} Prize Pool</div>
+    <div class="modal-game-prize" ${game.prize === 'Coming Soon' ? 'style="color:var(--text-muted);font-size:16px;font-family:inherit;letter-spacing:2px;"' : ''}>${game.prize === 'Coming Soon' ? 'Coming Soon' : game.prize + ' Prize Pool'}</div>
     <div style="margin-bottom:16px;">
       <span style="font-family:Rajdhani;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);">Mode: </span>
       <span style="font-size:14px;color:var(--text-secondary);">${game.mode}</span>
