@@ -361,6 +361,7 @@
       object-fit: cover;
     }
 
+
     .hero-video-wrap::after {
       content: '';
       position: absolute;
