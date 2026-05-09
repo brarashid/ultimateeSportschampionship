@@ -413,6 +413,7 @@
       padding: 120px 32px 80px;
       max-width: 1280px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .hero-badge {
@@ -476,6 +477,8 @@
       color: var(--text-secondary);
       max-width: 540px;
       margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto;
       font-weight: 300;
       letter-spacing: 0.5px;
       animation: fadeSlideUp 0.8s 0.3s ease both;
@@ -487,6 +490,7 @@
       gap: 14px;
       margin-bottom: 56px;
       animation: fadeSlideUp 0.8s 0.45s ease both;
+      justify-content: center;
     }
 
     .btn-primary {
@@ -538,6 +542,7 @@
       gap: 32px;
       margin-bottom: 64px;
       animation: fadeSlideUp 0.8s 0.6s ease both;
+      justify-content: center;
     }
 
     .hero-stat {
@@ -582,6 +587,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .countdown-unit {
@@ -628,6 +634,7 @@
       flex-wrap: wrap;
       gap: 10px;
       animation: fadeSlideUp 0.8s 0.9s ease both;
+      justify-content: center;
     }
 
     .hero-game-tag {
