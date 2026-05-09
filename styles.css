@@ -1321,7 +1321,19 @@
     /* ============================================================
        GAMES SECTION
     ============================================================ */
-    #games { background: var(--bg-secondary); }
+    #games {
+      background: url('Featured Games background.jpg') center center / contain repeat;
+      background-color: var(--bg-secondary);
+      position: relative;
+    }
+    #games::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 8, 18, 0.78);
+      z-index: 0;
+    }
+    #games > * { position: relative; z-index: 1; }
 
     .games-grid {
       display: grid;
