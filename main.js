@@ -330,7 +330,7 @@ function renderGames() {
           </span>
           ${g.prize !== 'Coming Soon' ? `<span class="game-meta-item"><i data-lucide="trophy" style="width:12px;height:12px;"></i> Prize Pool</span>` : ''}
         </div>
-        <div class="game-prize" ${g.prize === 'Coming Soon' ? 'style="color:var(--text-muted);font-size:14px;letter-spacing:2px;font-family:inherit;"' : ''}>${g.prize}</div>
+        <div class="game-prize" ${g.prize === 'Coming Soon' ? 'style="color:#fff;font-size:18px;font-weight:900;letter-spacing:3px;text-transform:uppercase;font-family:\'Bebas Neue\',sans-serif;background:linear-gradient(90deg,#a855f7,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"' : ''}>${g.prize}</div>
         <p class="game-desc">${g.description}</p>
         <div class="game-card-footer">
           <button class="btn-rules" onclick="event.stopPropagation();openGameModal('${g.id}')">View Rules</button>
@@ -518,7 +518,7 @@ function openGameModal(gameId) {
   const content = document.getElementById('modal-content');
   content.innerHTML = `
     <div class="modal-game-title">${game.title}</div>
-    <div class="modal-game-prize" ${game.prize === 'Coming Soon' ? 'style="color:var(--text-muted);font-size:16px;font-family:inherit;letter-spacing:2px;"' : ''}>${game.prize === 'Coming Soon' ? 'Coming Soon' : game.prize + ' Prize Pool'}</div>
+    <div class="modal-game-prize" ${game.prize === 'Coming Soon' ? 'style="font-size:22px;font-weight:900;letter-spacing:4px;text-transform:uppercase;font-family:\'Bebas Neue\',sans-serif;background:linear-gradient(90deg,#a855f7,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"' : ''}>${game.prize === 'Coming Soon' ? 'Coming Soon' : game.prize + ' Prize Pool'}</div>
     <div style="margin-bottom:16px;">
       <span style="font-family:Rajdhani;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);">Mode: </span>
       <span style="font-size:14px;color:var(--text-secondary);">${game.mode}</span>
