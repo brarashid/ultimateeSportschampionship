@@ -2428,23 +2428,73 @@
     @media (max-width: 768px) {
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
-      section { padding: 72px 0; }
+      section { padding: 64px 0; }
+      .section-header { margin-bottom: 40px; }
+      .section-title { font-size: clamp(28px, 7vw, 48px); }
       .games-grid { grid-template-columns: 1fr; }
       .teams-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
       .players-grid { grid-template-columns: 1fr; }
       .news-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; gap: 24px; }
       .form-row { grid-template-columns: 1fr; }
-      .hero-stats { gap: 20px; }
+      .hero-stats { gap: 16px; }
+      .hero-stat-number { font-size: 28px; }
       .countdown { gap: 8px; }
-      .countdown-unit { min-width: 60px; padding: 10px 14px; }
-      .countdown-number { font-size: 30px; }
+      .countdown-unit { min-width: 60px; padding: 10px 12px; }
+      .countdown-number { font-size: 28px; }
+      .about-text h3 { font-size: clamp(26px, 6vw, 36px); }
+      .about-grid { gap: 32px; }
+      .fixture-card { flex-wrap: wrap; gap: 10px; }
+      .fixture-meta { text-align: left; }
+      .contact-grid { gap: 32px; }
+      .stream-grid { gap: 24px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-games { gap: 8px; }
+      .hero-game-tag { font-size: 11px; padding: 6px 12px; }
     }
 
     @media (max-width: 480px) {
-      .nav-inner { padding: 0 16px; }
-      .hero-content { padding: 100px 16px 60px; }
-      .container { padding: 0 16px; }
-      .reg-form-wrap, .contact-form-wrap { padding: 24px 20px; }
-      .hero-title { font-size: 48px; }
+      .nav-inner { padding: 0 14px; height: 60px; }
+      .hero-content { padding: 90px 16px 60px; }
+      .container { padding: 0 14px; }
+      .reg-form-wrap, .contact-form-wrap { padding: 20px 16px; }
+      .hero-title { font-size: clamp(32px, 10vw, 52px); }
+      .hero-tagline { font-size: 14px; margin-bottom: 28px; }
+      .hero-badge { font-size: 10px; padding: 6px 14px; }
+      .hero-stats { gap: 12px; }
+      .hero-stat-number { font-size: 24px; }
+      .hero-stat-label { font-size: 10px; }
+      .countdown-unit { min-width: 52px; padding: 8px 10px; }
+      .countdown-number { font-size: 24px; }
+      .btn-primary, .btn-secondary { padding: 12px 22px; font-size: 12px; }
+      .hero-buttons { gap: 10px; margin-bottom: 36px; }
+      .hero-stats { margin-bottom: 40px; }
+      .countdown-wrap { margin-bottom: 40px; }
+      .section-title { font-size: clamp(24px, 8vw, 40px); }
+      .about-text h3 { font-size: 26px; }
+      .about-mission { padding: 16px; }
+      .format-step { padding: 14px; }
+      .step-num { font-size: 24px; }
+      .rules-list { padding: 16px; }
+      .sponsor-cta { padding: 16px; }
+      .modal-box { padding: 24px 16px; }
+      section { padding: 52px 0; }
+      .section-header { margin-bottom: 32px; }
+      .hero-sponsors { padding: 14px 16px; }
+      .sponsor-logo img { height: 36px; }
+      .fixture-teams { flex-wrap: wrap; }
+      .contact-form-wrap h3 { font-size: 22px; }
+      .contact-info h3 { font-size: 26px; }
+      .leaderboard-table th, .leaderboard-table td { padding: 10px 10px; font-size: 12px; }
+    }
+
+    @media (max-width: 360px) {
+      .hero-title { font-size: 30px; }
+      .hero-stat-number { font-size: 20px; }
+      .countdown-number { font-size: 20px; }
+      .countdown-unit { min-width: 46px; padding: 7px 8px; }
+      .hero-game-tag { font-size: 10px; padding: 5px 10px; }
+      .btn-primary, .btn-secondary { padding: 10px 16px; font-size: 11px; }
+      .hero-content { padding: 80px 12px 50px; }
+      .container { padding: 0 12px; }
     }
