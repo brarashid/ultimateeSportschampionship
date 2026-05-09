@@ -9,7 +9,7 @@
 const GAMES_DATA = [
   {
     id: 'fifa',
-    title: 'FIFA 2026',
+    title: 'FC26',
     mode: '1v1 / 2v2',
     prize: '₵20,000',
     players: 480,
@@ -18,7 +18,7 @@ const GAMES_DATA = [
     bg: 'linear-gradient(135deg,#1a1200,#332800)',
     description: 'The beautiful game goes digital. Compete in Africa\'s most competitive FIFA tournament with true-to-life gameplay and next-gen mechanics.',
     rules: [
-      'Standard FIFA 2026 tournament settings apply',
+      'Standard FC26 tournament settings apply',
       'Match duration: 6-minute halves (group), 8-minute halves (knockout)',
       'Default squad restrictions — no custom tactics exploits',
       'All matches played on designated tournament consoles',
@@ -86,17 +86,17 @@ const GAMES_DATA = [
 ];
 
 const TEAMS_DATA = [
-  { name: 'Phantom Lions', game: 'FIFA 2026', color: '#ffd700', abbr: 'PL' },
+  { name: 'Phantom Lions', game: 'FC26', color: '#ffd700', abbr: 'PL' },
   { name: 'Storm Wolves', game: 'Call of Duty', color: '#00d4ff', abbr: 'SW' },
   { name: 'Apex Vipers', game: 'Fortnite', color: '#a855f7', abbr: 'AV' },
-  { name: 'Neon Falcons', game: 'FIFA 2026', color: '#00ff88', abbr: 'NF' },
+  { name: 'Neon Falcons', game: 'FC26', color: '#00ff88', abbr: 'NF' },
   { name: 'Shadow Kings', game: 'Mortal Kombat', color: '#ff3a3a', abbr: 'SK' },
   { name: 'Cyber Hawks', game: 'Call of Duty', color: '#ff8c00', abbr: 'CH' },
   { name: 'Delta Squad', game: 'Fortnite', color: '#00d4ff', abbr: 'DS' },
-  { name: 'Iron Serpents', game: 'FIFA 2026', color: '#c0c0c0', abbr: 'IS' },
+  { name: 'Iron Serpents', game: 'FC26', color: '#c0c0c0', abbr: 'IS' },
   { name: 'Blaze Unit', game: 'Mortal Kombat', color: '#ff3a3a', abbr: 'BU' },
   { name: 'Void Reapers', game: 'Call of Duty', color: '#a855f7', abbr: 'VR' },
-  { name: 'Gold Eagles', game: 'FIFA 2026', color: '#ffd700', abbr: 'GE' },
+  { name: 'Gold Eagles', game: 'FC26', color: '#ffd700', abbr: 'GE' },
   { name: 'Turbo Titans', game: 'Fortnite', color: '#00ff88', abbr: 'TT' },
 ];
 
@@ -112,14 +112,14 @@ const PLAYERS_DATA = [
 ];
 
 const FIXTURES_DATA = [
-  { id: 1, team1: 'Phantom Lions', team2: 'Gold Eagles', game: 'FIFA 2026', date: 'Aug 20', time: '10:00 AM', status: 'upcoming', score: null },
+  { id: 1, team1: 'Phantom Lions', team2: 'Gold Eagles', game: 'FC26', date: 'Aug 20', time: '10:00 AM', status: 'upcoming', score: null },
   { id: 2, team1: 'Storm Wolves', team2: 'Cyber Hawks', game: 'Call of Duty', date: 'Aug 20', time: '11:30 AM', status: 'live', score: '2 - 1' },
   { id: 3, team1: 'Apex Vipers', team2: 'Delta Squad', game: 'Fortnite', date: 'Aug 19', time: '02:00 PM', status: 'completed', score: '182 - 156' },
   { id: 4, team1: 'Shadow Kings', team2: 'Blaze Unit', game: 'Mortal Kombat', date: 'Aug 19', time: '04:00 PM', status: 'completed', score: '3 - 1' },
-  { id: 5, team1: 'Neon Falcons', team2: 'Iron Serpents', game: 'FIFA 2026', date: 'Aug 20', time: '01:00 PM', status: 'upcoming', score: null },
+  { id: 5, team1: 'Neon Falcons', team2: 'Iron Serpents', game: 'FC26', date: 'Aug 20', time: '01:00 PM', status: 'upcoming', score: null },
   { id: 6, team1: 'Void Reapers', team2: 'Delta Squad', game: 'Call of Duty', date: 'Aug 20', time: '03:30 PM', status: 'upcoming', score: null },
   { id: 7, team1: 'Turbo Titans', team2: 'Apex Vipers', game: 'Fortnite', date: 'Aug 21', time: '09:00 AM', status: 'upcoming', score: null },
-  { id: 8, team1: 'Phantom Lions', team2: 'Neon Falcons', game: 'FIFA 2026', date: 'Aug 19', time: '06:00 PM', status: 'completed', score: '1 - 0' },
+  { id: 8, team1: 'Phantom Lions', team2: 'Neon Falcons', game: 'FC26', date: 'Aug 19', time: '06:00 PM', status: 'completed', score: '1 - 0' },
 ];
 
 const LEADERBOARD_DATA = [
@@ -135,7 +135,7 @@ const LEADERBOARD_DATA = [
 
 const STREAM_SCHEDULE = [
   { time: '09:00', match: 'Opening Ceremony & Group Stage Draw', game: 'All Games' },
-  { time: '10:00', match: 'FIFA 2026 — Group A Matches', game: 'FIFA 2026' },
+  { time: '10:00', match: 'FC26 — Group A Matches', game: 'FC26' },
   { time: '12:00', match: 'Call of Duty — Qualifier Round 1', game: 'Call of Duty' },
   { time: '14:00', match: 'Fortnite — Solos Qualifier', game: 'Fortnite' },
   { time: '16:00', match: 'Mortal Kombat — 1v1 Bracket', game: 'Mortal Kombat' },
@@ -147,16 +147,16 @@ const NEWS_DATA = [
   {
     category: 'Announcement',
     date: 'May 1, 2026',
-    title: 'FIFA 2026 Slots Now Open — Register Before July 15',
+    title: 'FC26 Slots Now Open — Register Before July 15',
     excerpt: 'The most anticipated game category of UEC 2026 has opened registration. With only 480 spots available, competition is fierce.',
-    full: 'Following last year\'s record-breaking FIFA tournament, we\'ve expanded to 480 player slots for FIFA 2026. This year\'s format introduces a new regional qualifier system that ensures fair representation from all parts of Ghana and neighboring countries. Prizes have also increased, with the winner taking home ₵12,000 and the runner-up claiming ₵5,000. Registration closes July 15 — secure your spot now.',
+    full: 'Following last year\'s record-breaking FIFA tournament, we\'ve expanded to 480 player slots for FC26. This year\'s format introduces a new regional qualifier system that ensures fair representation from all parts of Ghana and neighboring countries. Prizes have also increased, with the winner taking home ₵12,000 and the runner-up claiming ₵5,000. Registration closes July 15 — secure your spot now.',
     color: '#001a10'
   },
   {
     category: 'Tournament',
     date: 'April 28, 2026',
     title: 'Phantom Lions Dominate Group A With Flawless Record',
-    excerpt: 'After five group stage matches, Phantom Lions stand undefeated with a +18 goal difference in the FIFA 2026 bracket.',
+    excerpt: 'After five group stage matches, Phantom Lions stand undefeated with a +18 goal difference in the FC26 bracket.',
     full: 'Phantom Lions, led by star player Kwame "KWAME_GH" Asante, have been the most dominant team in this season\'s group stages. Their aggressive attacking style combined with disciplined defensive shape has led to five straight wins. Team captain Asante has scored 14 goals across the five matches, establishing himself as the player to watch in the knockout rounds.',
     color: '#1a0d00'
   },
