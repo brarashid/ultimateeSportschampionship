@@ -1322,18 +1322,26 @@
        GAMES SECTION
     ============================================================ */
     #games {
-      background: url('Featured Games background.jpg') center center / contain repeat;
       background-color: var(--bg-secondary);
       position: relative;
+      overflow: hidden;
     }
     #games::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: rgba(5, 8, 18, 0.78);
+      inset: -20px;
+      background: url('Featured Games background.jpg') center center / contain repeat;
+      filter: blur(4px);
       z-index: 0;
     }
-    #games > * { position: relative; z-index: 1; }
+    #games::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 8, 18, 0.78);
+      z-index: 1;
+    }
+    #games > * { position: relative; z-index: 2; }
 
     .games-grid {
       display: grid;
