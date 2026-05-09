@@ -11,7 +11,7 @@ const GAMES_DATA = [
     id: 'fifa',
     title: 'FIFA 2026',
     mode: '1v1 / 2v2',
-    prize: '$20,000',
+    prize: '₵20,000',
     players: 480,
     featured: true,
     color: '#ffd700',
@@ -30,7 +30,7 @@ const GAMES_DATA = [
     id: 'cod',
     title: 'Call of Duty',
     mode: '5v5 Team',
-    prize: '$15,000',
+    prize: '₵15,000',
     players: 300,
     featured: false,
     color: '#00d4ff',
@@ -49,7 +49,7 @@ const GAMES_DATA = [
     id: 'fortnite',
     title: 'Fortnite',
     mode: 'Solos / Duos',
-    prize: '$10,000',
+    prize: '₵10,000',
     players: 240,
     featured: false,
     color: '#a855f7',
@@ -68,7 +68,7 @@ const GAMES_DATA = [
     id: 'mk',
     title: 'Mortal Kombat',
     mode: '1v1 Fighter',
-    prize: '$5,000',
+    prize: '₵5,000',
     players: 180,
     featured: false,
     color: '#ff3a3a',
@@ -149,7 +149,7 @@ const NEWS_DATA = [
     date: 'May 1, 2026',
     title: 'FIFA 2026 Slots Now Open — Register Before July 15',
     excerpt: 'The most anticipated game category of UEC 2026 has opened registration. With only 480 spots available, competition is fierce.',
-    full: 'Following last year\'s record-breaking FIFA tournament, we\'ve expanded to 480 player slots for FIFA 2026. This year\'s format introduces a new regional qualifier system that ensures fair representation from all parts of Ghana and neighboring countries. Prizes have also increased, with the winner taking home $12,000 and the runner-up claiming $5,000. Registration closes July 15 — secure your spot now.',
+    full: 'Following last year\'s record-breaking FIFA tournament, we\'ve expanded to 480 player slots for FIFA 2026. This year\'s format introduces a new regional qualifier system that ensures fair representation from all parts of Ghana and neighboring countries. Prizes have also increased, with the winner taking home ₵12,000 and the runner-up claiming ₵5,000. Registration closes July 15 — secure your spot now.',
     color: '#001a10'
   },
   {
@@ -165,7 +165,7 @@ const NEWS_DATA = [
     date: 'April 22, 2026',
     title: 'UEC Partners With NVIDIA For Next-Level Gaming Experience',
     excerpt: 'NVIDIA joins UEC 2026 as a gold sponsor, supplying RTX 5080-powered rigs for all tournament stations this season.',
-    full: 'NVIDIA\'s partnership with UEC 2026 marks the company\'s largest investment in African esports to date. Tournament participants will compete on purpose-built RTX 5080 machines with 240Hz monitors, bringing the most responsive and visually stunning gaming experience ever seen at an African esports event. NVIDIA will also offer a prize draw for spectators — a full RTX 5080 gaming rig worth $3,000.',
+    full: 'NVIDIA\'s partnership with UEC 2026 marks the company\'s largest investment in African esports to date. Tournament participants will compete on purpose-built RTX 5080 machines with 240Hz monitors, bringing the most responsive and visually stunning gaming experience ever seen at an African esports event. NVIDIA will also offer a prize draw for spectators — a full RTX 5080 gaming rig worth ₵3,000.',
     color: '#001220'
   },
 ];
