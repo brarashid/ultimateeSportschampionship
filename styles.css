@@ -739,124 +739,19 @@
       flex-shrink: 0;
     }
 
-    /* ── Headline Sponsor in Hero ── */
-    .headline-sponsor-hero {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 28px;
-      padding: 10px 20px;
-      background: rgba(255, 215, 0, 0.06);
-      border: 1px solid rgba(255, 215, 0, 0.25);
-      border-radius: 40px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .headline-sponsor-label {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      white-space: nowrap;
-    }
-
-    .headline-sponsor-hero-logo {
-      height: 36px;
-      width: auto;
-      border-radius: 6px;
-      object-fit: contain;
-    }
-
-    .headline-sponsor-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 20px;
-      letter-spacing: 2px;
-      color: #fff;
-      white-space: nowrap;
-    }
-
     /* ── Sponsors ribbon in hero ── */
     .hero-sponsors {
       position: relative;
       z-index: 2;
       width: 100%;
-      background: rgba(5, 8, 18, 0.85);
+      background: rgba(5, 8, 18, 0.7);
       border-top: 1px solid var(--border);
-      padding: 0;
-    }
-
-    /* Headline sponsor row inside the strip */
-    .hero-headline-sponsor {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      padding: 18px 32px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.15);
-      background: rgba(255, 215, 0, 0.04);
-    }
-
-    .hero-hs-label {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--accent-gold);
-      white-space: nowrap;
-    }
-
-    .hero-hs-divider {
-      flex: 1;
-      max-width: 80px;
-      height: 1px;
-      background: rgba(255, 215, 0, 0.3);
-    }
-
-    .hero-hs-logo {
-      height: 48px;
-      width: auto;
-      max-width: 160px;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    .hero-hs-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 2px;
-      color: #fff;
-      white-space: nowrap;
-    }
-
-    /* Media partners row inside the strip */
-    .hero-media-partners {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      padding: 14px 32px;
-    }
-
-    .hero-mp-label {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      white-space: nowrap;
-      flex-shrink: 0;
+      padding: 20px 32px;
     }
 
     .sponsors-track {
       overflow: hidden;
       width: 100%;
-      flex: 1;
     }
 
     .sponsors-inner {
@@ -1234,58 +1129,6 @@
     }
 
     .submit-btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-    /* ── Registration headline sponsor card ── */
-    .reg-headline-sponsor {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 40px;
-      padding: 32px 24px;
-      background: linear-gradient(135deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.02) 100%);
-      border: 2px solid rgba(255, 215, 0, 0.35);
-      border-radius: var(--radius-lg);
-      position: relative;
-    }
-
-    .reg-hs-badge {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--bg-primary);
-      background: var(--accent-gold);
-      padding: 4px 14px;
-      border-radius: 20px;
-    }
-
-    .reg-hs-logo {
-      height: 100px;
-      width: auto;
-      max-width: 260px;
-      object-fit: contain;
-      border-radius: 12px;
-    }
-
-    .reg-hs-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 26px;
-      letter-spacing: 3px;
-      color: var(--accent-gold);
-      margin: 0;
-    }
-
-    .media-partners-heading {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
 
     /* Sponsors */
     .sponsors-wrap {
