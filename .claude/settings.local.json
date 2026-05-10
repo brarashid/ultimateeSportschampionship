@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"c:\\\\Users\\\\Administrator\\\\Desktop\\\\ultimateeSportschampionship\")",
+      "Bash(findstr /i \"logo1\\\\|logo 1\")"
+    ]
+  }
+}
