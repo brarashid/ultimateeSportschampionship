@@ -378,28 +378,26 @@
     .hero-bg-fallback {
       position: absolute;
       inset: 0;
-      background: var(--bg-primary);
       overflow: hidden;
     }
 
     .hero-bg-fallback::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 20% 40%, rgba(0, 212, 255, 0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 80% 60%, rgba(168, 85, 247, 0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 50% 10%, rgba(255, 215, 0, 0.04) 0%, transparent 50%);
+      inset: -10px;
+      background: url('FC26.jpg') center center / cover no-repeat;
+      filter: blur(3px);
     }
 
-    .hero-grid {
+    .hero-bg-fallback::after {
+      content: '';
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      animation: gridPulse 8s ease-in-out infinite;
+      background: rgba(5, 8, 18, 0.55);
+    }
+
+    [data-theme="light"] .hero-bg-fallback::after {
+      background: rgba(0, 0, 0, 0.50);
     }
 
     @keyframes gridPulse {
