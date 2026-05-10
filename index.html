@@ -185,11 +185,13 @@
         <span class="sponsor-logo"><img src="Originalfm Modern Ghana.png" alt="Originalfm Modern Ghana"></span>
         <span class="sponsor-logo"><img src="Originaltv.jpg" alt="Original TV"></span>
         <span class="sponsor-logo"><img src="wiggles logo.jpg" alt="Wiggles"></span>
+        <span class="sponsor-logo"><img src="ABBA Investments.jpeg" alt="ABBA Investments"></span>
         <!-- Duplicate for seamless loop -->
         <span class="sponsor-logo"><img src="Metro TV Ghana logo.png" alt="Metro TV Ghana"></span>
         <span class="sponsor-logo"><img src="Originalfm Modern Ghana.png" alt="Originalfm Modern Ghana"></span>
         <span class="sponsor-logo"><img src="Originaltv.jpg" alt="Original TV"></span>
         <span class="sponsor-logo"><img src="wiggles logo.jpg" alt="Wiggles"></span>
+        <span class="sponsor-logo"><img src="ABBA Investments.jpeg" alt="ABBA Investments"></span>
       </div>
     </div>
   </div>
@@ -289,130 +291,123 @@
         <p class="section-subtitle">Secure your spot in Africa's biggest esports event. Limited slots available per game title.</p>
       </div>
 
-      <div class="registration-grid">
-        <!-- Form -->
-        <div class="reg-form-wrap reveal">
-          <h3>Player / Team Registration</h3>
-          <form id="reg-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="player-name">Player / Team Name</label>
-                <input type="text" id="player-name" class="form-input" placeholder="e.g. Phoenix Rising" />
-                <span class="form-error" id="err-name">Name is required</span>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="game-select">Select Game</label>
-                <div class="select-wrap">
-                  <select id="game-select" class="form-select">
-                    <option value="">Choose a game...</option>
-                    <option value="fifa">FC26</option>
-                    <option value="cod">Call of Duty</option>
-                    <option value="fortnite">Fortnite</option>
-                    <option value="mk">Mortal Kombat</option>
-                  </select>
-                </div>
-                <span class="form-error" id="err-game">Please select a game</span>
-              </div>
-            </div>
-
+      <!-- Form -->
+      <div class="reg-form-wrap reveal">
+        <h3>Player / Team Registration</h3>
+        <form id="reg-form" novalidate>
+          <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="reg-email">Email Address</label>
-              <input type="email" id="reg-email" class="form-input" placeholder="champion@email.com" />
-              <span class="form-error" id="err-email">Enter a valid email address</span>
+              <label class="form-label" for="player-name">Player / Team Name</label>
+              <input type="text" id="player-name" class="form-input" placeholder="e.g. Phoenix Rising" />
+              <span class="form-error" id="err-name">Name is required</span>
             </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="reg-phone">Phone Number</label>
-                <input type="tel" id="reg-phone" class="form-input" placeholder="+233 XX XXX XXXX" />
-                <span class="form-error" id="err-phone">Valid phone number required</span>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="reg-location">Location / City</label>
-                <input type="text" id="reg-location" class="form-input" placeholder="e.g. Kumasi, Ghana" />
-                <span class="form-error" id="err-location">Location is required</span>
-              </div>
-            </div>
-
             <div class="form-group">
-              <label class="form-label" for="team-type">Participation Type</label>
+              <label class="form-label" for="game-select">Select Game</label>
               <div class="select-wrap">
-                <select id="team-type" class="form-select">
-                  <option value="solo">Solo Player</option>
-                  <option value="team">Full Team</option>
+                <select id="game-select" class="form-select">
+                  <option value="">Choose a game...</option>
+                  <option value="fifa">FC26</option>
+                  <option value="cod">Call of Duty</option>
+                  <option value="fortnite">Fortnite</option>
+                  <option value="mk">Mortal Kombat</option>
                 </select>
               </div>
-            </div>
-
-            <button type="submit" class="submit-btn">
-              <i data-lucide="send" style="width:16px;height:16px;"></i>
-              Submit Registration
-            </button>
-          </form>
-        </div>
-
-        <!-- Sponsors -->
-        <div class="sponsors-wrap reveal">
-          <h3>Our Sponsors</h3>
-
-          <!-- Scrolling sponsor marquee -->
-          <div class="reg-sponsor-marquee">
-            <div class="reg-sponsor-track">
-              <!-- Set 1 -->
-              <div class="reg-sponsor-item">
-                <img src="Metro TV Ghana logo.png" alt="Metro TV Ghana" />
-                <span>Metro TV Ghana</span>
-              </div>
-              <div class="reg-sponsor-item">
-                <img src="Originalfm Modern Ghana.png" alt="Original FM" />
-                <span>Original FM</span>
-              </div>
-              <div class="reg-sponsor-item">
-                <img src="Originaltv.jpg" alt="Original TV" />
-                <span>Original TV</span>
-              </div>
-              <div class="reg-sponsor-item">
-                <img src="wiggles logo.jpg" alt="Wiggles" />
-                <span>Wiggles</span>
-              </div>
-              <!-- Set 2 (duplicate for seamless loop) -->
-              <div class="reg-sponsor-item">
-                <img src="Metro TV Ghana logo.png" alt="Metro TV Ghana" />
-                <span>Metro TV Ghana</span>
-              </div>
-              <div class="reg-sponsor-item">
-                <img src="Originalfm Modern Ghana.png" alt="Original FM" />
-                <span>Original FM</span>
-              </div>
-              <div class="reg-sponsor-item">
-                <img src="Originaltv.jpg" alt="Original TV" />
-                <span>Original TV</span>
-              </div>
-              <div class="reg-sponsor-item">
-                <img src="wiggles logo.jpg" alt="Wiggles" />
-                <span>Wiggles</span>
-              </div>
+              <span class="form-error" id="err-game">Please select a game</span>
             </div>
           </div>
 
-          <div class="sponsor-cta">
-            <h4>Become a Sponsor</h4>
-            <p>Reach 50,000+ engaged gaming fans across Africa. Packages start at ₵2,000.</p>
-            <a href="#contact" class="btn-outline-gold" data-scroll="contact">
-              <i data-lucide="handshake" style="width:14px;height:14px;"></i>
-              Get Sponsor Package
-            </a>
+          <div class="form-group">
+            <label class="form-label" for="reg-email">Email Address</label>
+            <input type="email" id="reg-email" class="form-input" placeholder="champion@email.com" />
+            <span class="form-error" id="err-email">Enter a valid email address</span>
           </div>
 
-          <!-- Quick info cards -->
-          <div class="reg-info-cards">
-            <div class="reg-info-card">
-              <div class="reg-info-date" style="color:var(--accent-gold);">July 15</div>
-              <div class="reg-info-label">Registration Deadline</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="reg-phone">Phone Number</label>
+              <input type="tel" id="reg-phone" class="form-input" placeholder="+233 XX XXX XXXX" />
+              <span class="form-error" id="err-phone">Valid phone number required</span>
             </div>
-            <div class="reg-info-card">
-              <div class="reg-info-date" style="color:var(--accent-cyan);">Aug 20</div>
-              <div class="reg-info-label">Grand Finals Day</div>
+            <div class="form-group">
+              <label class="form-label" for="reg-location">Location / City</label>
+              <input type="text" id="reg-location" class="form-input" placeholder="e.g. Kumasi, Ghana" />
+              <span class="form-error" id="err-location">Location is required</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="team-type">Participation Type</label>
+            <div class="select-wrap">
+              <select id="team-type" class="form-select">
+                <option value="solo">Solo Player</option>
+                <option value="team">Full Team</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <i data-lucide="send" style="width:16px;height:16px;"></i>
+            Submit Registration
+          </button>
+        </form>
+      </div>
+
+      <!-- Become a Sponsor -->
+      <div class="sponsor-cta reveal">
+        <h4>Become a Sponsor</h4>
+        <p>Reach 50,000+ engaged gaming fans across Africa. Packages start at ₵2,000.</p>
+        <a href="#contact" class="btn-outline-gold" data-scroll="contact">
+          <i data-lucide="handshake" style="width:14px;height:14px;"></i>
+          Get Sponsor Package
+        </a>
+      </div>
+
+      <!-- Sponsors -->
+      <div class="sponsors-wrap reveal">
+        <h3>Our Sponsors</h3>
+        <div class="reg-sponsor-marquee">
+          <div class="reg-sponsor-track">
+            <!-- Set 1 -->
+            <div class="reg-sponsor-item">
+              <img src="Metro TV Ghana logo.png" alt="Metro TV Ghana" />
+              <span>Metro TV Ghana</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="Originalfm Modern Ghana.png" alt="Original FM" />
+              <span>Original FM</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="Originaltv.jpg" alt="Original TV" />
+              <span>Original TV</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="wiggles logo.jpg" alt="Wiggles" />
+              <span>Wiggles</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="ABBA Investments.jpeg" alt="ABBA Investments" />
+              <span>ABBA Investments</span>
+            </div>
+            <!-- Set 2 (duplicate for seamless loop) -->
+            <div class="reg-sponsor-item">
+              <img src="Metro TV Ghana logo.png" alt="Metro TV Ghana" />
+              <span>Metro TV Ghana</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="Originalfm Modern Ghana.png" alt="Original FM" />
+              <span>Original FM</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="Originaltv.jpg" alt="Original TV" />
+              <span>Original TV</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="wiggles logo.jpg" alt="Wiggles" />
+              <span>Wiggles</span>
+            </div>
+            <div class="reg-sponsor-item">
+              <img src="ABBA Investments.jpeg" alt="ABBA Investments" />
+              <span>ABBA Investments</span>
             </div>
           </div>
         </div>

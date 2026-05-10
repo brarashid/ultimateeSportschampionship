@@ -974,16 +974,6 @@
     ============================================================ */
     #registration { background: var(--bg-primary); }
 
-    .registration-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      align-items: start;
-      width: 100%;
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
     .reg-form-wrap {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -992,6 +982,8 @@
       position: relative;
       overflow: visible;
       width: 100%;
+      max-width: 700px;
+      margin: 0 auto 56px;
     }
 
     .reg-form-wrap::before {
@@ -1141,6 +1133,8 @@
     /* Sponsors */
     .sponsors-wrap {
       text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .sponsors-wrap h3 {
@@ -1171,12 +1165,12 @@
 
     .reg-sponsor-marquee::before {
       left: 0;
-      background: linear-gradient(to right, var(--bg-card), transparent);
+      background: linear-gradient(to right, var(--bg-primary), transparent);
     }
 
     .reg-sponsor-marquee::after {
       right: 0;
-      background: linear-gradient(to left, var(--bg-card), transparent);
+      background: linear-gradient(to left, var(--bg-primary), transparent);
     }
 
     .reg-sponsor-track {
@@ -1227,6 +1221,7 @@
     }
 
     .sponsor-tier { margin-bottom: 28px; }
+
 
     .sponsor-tier-label {
       font-family: 'Rajdhani', sans-serif;
@@ -1279,23 +1274,24 @@
     }
 
     .sponsor-cta {
+      max-width: 700px;
+      margin: 0 auto 56px;
+      text-align: center;
+      padding: 40px 32px;
       background: var(--bg-card);
       border: 1px dashed var(--border-strong);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      text-align: center;
-      margin-top: 24px;
+      border-radius: var(--radius-lg);
     }
 
     .sponsor-cta h4 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: 18px;
-      font-weight: 700;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
       color: var(--text-primary);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    .sponsor-cta p { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+    .sponsor-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
 
     .btn-outline-gold {
       display: inline-flex;
@@ -2469,7 +2465,7 @@
        RESPONSIVE
     ============================================================ */
     @media (max-width: 1100px) {
-      .about-grid, .registration-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .fixtures-leaderboard-grid { grid-template-columns: 1fr; }
       .stream-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
