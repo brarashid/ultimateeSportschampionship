@@ -1610,7 +1610,19 @@
     /* ============================================================
        FIXTURES SECTION
     ============================================================ */
-    #fixtures { background: var(--bg-primary); }
+    #fixtures {
+      position: relative;
+      overflow: hidden;
+    }
+    #fixtures::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('FC26 background (6).png') center center / cover no-repeat;
+      opacity: 0.18;
+      z-index: 0;
+    }
+    #fixtures > * { position: relative; z-index: 1; }
 
     .fixtures-leaderboard-grid {
       display: grid;
@@ -1847,7 +1859,19 @@
     /* ============================================================
        LIVE STREAM SECTION
     ============================================================ */
-    #livestream { background: var(--bg-secondary); }
+    #livestream {
+      position: relative;
+      overflow: hidden;
+    }
+    #livestream::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('FC26 background (1).png') center center / cover no-repeat;
+      opacity: 0.18;
+      z-index: 0;
+    }
+    #livestream > * { position: relative; z-index: 1; }
 
     .stream-grid {
       display: grid;
