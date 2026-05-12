@@ -378,29 +378,35 @@
       );
     }
 
-    /* Fallback animated background when no video */
-    .hero-bg-fallback {
+    /* FC26 background slideshow */
+    .hero-bg-slideshow {
       position: absolute;
       inset: 0;
       overflow: hidden;
+      z-index: 0;
     }
 
-    .hero-bg-fallback::before {
-      content: '';
-      position: absolute;
-      inset: -10px;
-      background: url('FC26.jpg') center center / cover no-repeat;
-      filter: blur(3px);
-    }
-
-    .hero-bg-fallback::after {
-      content: '';
+    .hero-slide {
       position: absolute;
       inset: 0;
-      background: rgba(5, 8, 18, 0.55);
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
     }
 
-    [data-theme="light"] .hero-bg-fallback::after {
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 8, 18, 0.58);
+      z-index: 1;
+    }
+
+    [data-theme="light"] .hero-slide-overlay {
       background: rgba(0, 0, 0, 0.50);
     }
 
@@ -982,7 +988,19 @@
     /* ============================================================
        REGISTRATION SECTION
     ============================================================ */
-    #registration { background: var(--bg-primary); }
+    #registration {
+      position: relative;
+      overflow: hidden;
+    }
+    #registration::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('FC26 background (5).png') center center / cover no-repeat;
+      opacity: 0.18;
+      z-index: 0;
+    }
+    #registration > * { position: relative; z-index: 1; }
 
     .reg-form-wrap {
       background: var(--bg-card);
