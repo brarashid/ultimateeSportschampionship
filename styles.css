@@ -2097,7 +2097,19 @@
     /* ============================================================
        CONTACT SECTION
     ============================================================ */
-    #contact { background: var(--bg-primary); }
+    #contact {
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('FC26 background (7).png') center center / cover no-repeat;
+      opacity: 0.18;
+      z-index: 0;
+    }
+    #contact > * { position: relative; z-index: 1; }
 
     .contact-grid {
       display: grid;
