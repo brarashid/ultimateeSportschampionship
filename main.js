@@ -150,28 +150,58 @@ const STREAM_SCHEDULE = [
 
 const NEWS_DATA = [
   {
-    category: 'Announcement',
-    date: 'May 1, 2026',
-    title: 'FC26 Slots Now Open — Register Before July 15',
-    excerpt: 'The most anticipated game category of UEC 2026 has opened registration. With only 480 spots available, competition is fierce.',
-    full: 'Following last year\'s record-breaking FIFA tournament, we\'ve expanded to 480 player slots for FC26. This year\'s format introduces a new regional qualifier system that ensures fair representation from all parts of Ghana and neighboring countries. Prizes have also increased, with the winner taking home ₵12,000 and the runner-up claiming ₵5,000. Registration closes July 15 — secure your spot now.',
+    category: 'FC26 News',
+    date: 'April 23, 2026',
+    title: 'World Tour Season 7: South Africa \'10',
+    excerpt: 'EA Sports FC 26 launches its latest World Tour season, celebrating the iconic South Africa 2010 era with exclusive themed content.',
+    full: 'World Tour Season 7 takes players back to the iconic South Africa 2010 era, introducing exclusive kits, stadiums, and player items inspired by one of football\'s greatest tournaments. This seasonal content brings a fresh wave of challenges and rewards for FC 26 players worldwide.',
+    image: 'https://drop-assets.ea.com/images/7C2g8p50lZrgQY3Xnw12Gb/8fad2a1f23acd9534272cbe830b7d412/worldtourseason7.png',
     color: '#001a10'
   },
   {
-    category: 'Tournament',
-    date: 'April 28, 2026',
-    title: 'Phantom Lions Dominate Group A With Flawless Record',
-    excerpt: 'After five group stage matches, Phantom Lions stand undefeated with a +18 goal difference in the FC26 bracket.',
-    full: 'Phantom Lions, led by star player Kwame "KWAME_GH" Asante, have been the most dominant team in this season\'s group stages. Their aggressive attacking style combined with disciplined defensive shape has led to five straight wins. Team captain Asante has scored 14 goals across the five matches, establishing himself as the player to watch in the knockout rounds.',
-    color: '#1a0d00'
+    category: 'FC26 News',
+    date: 'April 17, 2026',
+    title: 'Team of the Season — Best of the Best',
+    excerpt: 'EA Sports FC 26\'s Team of the Season promotion is here, featuring special golden-trimmed cards for the most outstanding performers this season.',
+    full: 'The Team of the Season promotion highlights the best-performing players across Europe\'s top leagues. Special golden-trimmed cards with boosted stats are available through packs, objectives, and SBCs, giving FC 26 Ultimate Team players the chance to add elite talent to their squads.',
+    image: 'https://drop-assets.ea.com/images/5Mv1YO9Gv58U0kLeHSQtLU/d36ccccc8443a569aab0e14ed1643eb1/FC26_TOTS_Generic_-XBOX.jpg',
+    color: '#1a1000'
   },
   {
-    category: 'Esports',
-    date: 'April 22, 2026',
-    title: 'UEC Partners With NVIDIA For Next-Level Gaming Experience',
-    excerpt: 'NVIDIA joins UEC 2026 as a gold sponsor, supplying RTX 5080-powered rigs for all tournament stations this season.',
-    full: 'NVIDIA\'s partnership with UEC 2026 marks the company\'s largest investment in African esports to date. Tournament participants will compete on purpose-built RTX 5080 machines with 240Hz monitors, bringing the most responsive and visually stunning gaming experience ever seen at an African esports event. NVIDIA will also offer a prize draw for spectators — a full RTX 5080 gaming rig worth ₵3,000.',
+    category: 'FC26 News',
+    date: 'April 7, 2026',
+    title: 'Icons Edition — Legends Join FC 26',
+    excerpt: 'Zlatan Ibrahimović, Zinedine Zidane, and Alex Morgan headline the Icons Edition, bringing legendary players to FC 26 Ultimate Team.',
+    full: 'The Icons Edition of EA Sports FC 26 celebrates football\'s all-time greats, with Zlatan Ibrahimović, Zinedine Zidane, and Alex Morgan leading the charge. Players who pick up the Icons Edition receive exclusive icon items and early access bonuses to kick off their Ultimate Team journey in style.',
+    image: 'https://drop-assets.ea.com/images/1tOl88hpcYLXlI70e4DwGy/2efda409657e970c18c40f08a06aebe9/ICONS_Edition_Cover_Final_16x9.png',
+    color: '#0d001a'
+  },
+  {
+    category: 'FC26 News',
+    date: 'April 3, 2026',
+    title: 'Trophy Titans Promo Arrives in FC 26',
+    excerpt: 'Alex Morgan and Zinedine Zidane star in the Trophy Titans promotion, wearing striking black jerseys with gold accents.',
+    full: 'Trophy Titans celebrates the greatest winners in football history. Featuring Alex Morgan and Zinedine Zidane in iconic black and gold designs, this promotion brings special high-rated cards tied to trophy-winning moments, available through packs and in-game challenges throughout the event.',
+    image: 'https://drop-assets.ea.com/images/roHa4VFuLW1y4oGQambfv/5bcfa751fb0b2101b99041bbb29209a3/FUT26_TrophyTitans_16x9_ICONS_Screenshot.png',
     color: '#001220'
+  },
+  {
+    category: 'FC26 News',
+    date: 'March 27, 2026',
+    title: 'UEFA Road to the Final — Dynamic Cards Updated',
+    excerpt: 'FC 26\'s UEFA Road to the Final promotion delivers dynamic cards that upgrade in real time as clubs progress through European competition.',
+    full: 'The UEFA Road to the Final promotion is back in EA Sports FC 26. Dynamic player cards receive live upgrades as their clubs advance through the UEFA Champions League, Europa League, and Conference League, making every matchday in real life matter directly inside your Ultimate Team squad.',
+    image: 'https://drop-assets.ea.com/images/6Qk0stSgpjaBJgmPkygWXJ/2ac3ca714d95dfe77fe722caaf417fee/RTTF-Generic-16x9_Creator_Suite.png',
+    color: '#000d1a'
+  },
+  {
+    category: 'FC26 News',
+    date: 'March 4, 2026',
+    title: 'Title Update v1.5.0 Patch Notes Released',
+    excerpt: 'EA Sports drops the v1.5.0 title update for FC 26, bringing key gameplay balance changes, bug fixes, and quality-of-life improvements.',
+    full: 'Title Update v1.5.0 for EA Sports FC 26 addresses several gameplay balance issues raised by the community, including improvements to defensive AI behaviour, passing responsiveness, and goalkeeper animations. The update also fixes a number of reported bugs in Career Mode and Ultimate Team, delivering a smoother overall experience.',
+    image: 'https://drop-assets.ea.com/images/4uEybbcFmX0m7iBWoQtjKx/15e12ed86789cc73591dfd97fd297b89/fc26-Pitch-Notes-Title-Update-1.5.jpg',
+    color: '#0a0a1a'
   },
 ];
 
@@ -470,10 +500,10 @@ function renderNews() {
     <div class="news-card reveal">
       <div class="news-img" style="background:${n.color}">
         <img
-          src="https://images.unsplash.com/photo-${i===0?'1542751371-adc38448a05e':i===1?'1493711662062-fa541adb3fc8':'1511512578047-dfb367046420'}?w=600&q=80&auto=format&fit=crop"
+          src="${n.image}"
           alt="${n.title}"
           loading="lazy"
-          style="width:100%;height:100%;object-fit:cover;opacity:0.7;"
+          style="width:100%;height:100%;object-fit:cover;opacity:0.9;"
           onerror="this.style.display='none'"
         />
         <span class="news-category">${n.category}</span>
