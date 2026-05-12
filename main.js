@@ -96,18 +96,13 @@ const GAMES_DATA = [
 ];
 
 const TEAMS_DATA = [
-  { name: 'Phantom Lions', game: 'FC26', color: '#ffd700', abbr: 'PL' },
-  { name: 'Storm Wolves', game: 'Call of Duty', color: '#00d4ff', abbr: 'SW' },
-  { name: 'Apex Vipers', game: 'Fortnite', color: '#a855f7', abbr: 'AV' },
-  { name: 'Neon Falcons', game: 'FC26', color: '#00ff88', abbr: 'NF' },
-  { name: 'Shadow Kings', game: 'Mortal Kombat', color: '#ff3a3a', abbr: 'SK' },
-  { name: 'Cyber Hawks', game: 'Call of Duty', color: '#ff8c00', abbr: 'CH' },
-  { name: 'Delta Squad', game: 'Fortnite', color: '#00d4ff', abbr: 'DS' },
-  { name: 'Iron Serpents', game: 'FC26', color: '#c0c0c0', abbr: 'IS' },
-  { name: 'Blaze Unit', game: 'Mortal Kombat', color: '#ff3a3a', abbr: 'BU' },
-  { name: 'Void Reapers', game: 'Call of Duty', color: '#a855f7', abbr: 'VR' },
-  { name: 'Gold Eagles', game: 'FC26', color: '#ffd700', abbr: 'GE' },
-  { name: 'Turbo Titans', game: 'Fortnite', color: '#00ff88', abbr: 'TT' },
+  { name: 'University of Ghana', game: 'FC26', color: '#007a3d', abbr: 'UG' },
+  { name: 'UPSA', game: 'FC26', color: '#00d4ff', abbr: 'UP' },
+  { name: 'GH Media', game: 'FC26', color: '#a855f7', abbr: 'GM' },
+  { name: 'Central University', game: 'FC26', color: '#ff3a3a', abbr: 'CU' },
+  { name: 'KNUST', game: 'FC26', color: '#ffd700', abbr: 'KN' },
+  { name: 'Kumasi Technical University', game: 'FC26', color: '#ff8c00', abbr: 'KTU' },
+  { name: 'Pentecost University', game: 'FC26', color: '#00ff88', abbr: 'PU' },
 ];
 
 const PLAYERS_DATA = [
