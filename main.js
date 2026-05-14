@@ -600,16 +600,19 @@ function markInput(id, error) {
   if (el) el.classList.toggle('error', error);
 }
 
+// Paste your Google Apps Script web app URL here after deploying
+const REGISTRATION_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
 function initRegistrationForm() {
-  document.getElementById('reg-form').addEventListener('submit', e => {
+  document.getElementById('reg-form').addEventListener('submit', async e => {
     e.preventDefault();
-    let valid = true;
 
     const name = document.getElementById('player-name').value.trim();
     const game = document.getElementById('game-select').value;
     const email = document.getElementById('reg-email').value.trim();
     const phone = document.getElementById('reg-phone').value.trim();
     const loc = document.getElementById('reg-location').value.trim();
+    const type = document.getElementById('team-type').value;
 
     markInput('player-name', !name); showError('err-name', !name);
     markInput('game-select', !game); showError('err-game', !game);
@@ -619,17 +622,38 @@ function initRegistrationForm() {
 
     if (!name || !game || !validateEmail(email) || !phone || !loc) return;
 
-    showToast('success', 'Registration Submitted!', `Welcome, ${name}! You'll receive a confirmation email shortly.`);
-    e.target.reset();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    try {
+      await fetch(REGISTRATION_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ name, game, email, phone, location: loc, participationType: type, type: 'registration' }),
+        mode: 'no-cors'
+      });
+      showToast('success', 'Registration Submitted!', `Welcome, ${name}! You'll receive a confirmation email shortly.`);
+      e.target.reset();
+    } catch {
+      showToast('error', 'Submission Failed', 'Please check your connection and try again.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Submit Registration';
+    }
   });
 }
 
+// Paste your Google Apps Script web app URL for the contact form here
+const CONTACT_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+
 function initContactForm() {
-  document.getElementById('contact-form').addEventListener('submit', e => {
+  document.getElementById('contact-form').addEventListener('submit', async e => {
     e.preventDefault();
 
     const name = document.getElementById('c-name').value.trim();
     const email = document.getElementById('c-email').value.trim();
+    const subject = document.getElementById('c-subject').value.trim();
     const msg = document.getElementById('c-message').value.trim();
 
     markInput('c-name', !name); showError('cerr-name', !name);
@@ -638,8 +662,25 @@ function initContactForm() {
 
     if (!name || !validateEmail(email) || !msg) return;
 
-    showToast('info', 'Message Sent!', 'Our team will get back to you within 24 hours.');
-    e.target.reset();
+    const btn = e.target.querySelector('.submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      await fetch(CONTACT_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ name, email, subject, message: msg, type: 'contact' }),
+        mode: 'no-cors'
+      });
+      showToast('info', 'Message Sent!', 'Our team will get back to you within 24 hours.');
+      e.target.reset();
+    } catch {
+      showToast('error', 'Submission Failed', 'Please check your connection and try again.');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
   });
 }
 
