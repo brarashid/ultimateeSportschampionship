@@ -131,25 +131,24 @@ const PLAYERS_DATA = [
 ];
 
 const FIXTURES_DATA = [
-  { id: 1, team1: 'Phantom Lions', team2: 'Gold Eagles', game: 'FC26', date: 'Aug 20', time: '10:00 AM', status: 'upcoming', score: null },
-  { id: 2, team1: 'Storm Wolves', team2: 'Cyber Hawks', game: 'Call of Duty', date: 'Aug 20', time: '11:30 AM', status: 'live', score: '2 - 1' },
-  { id: 3, team1: 'Apex Vipers', team2: 'Delta Squad', game: 'Fortnite', date: 'Aug 19', time: '02:00 PM', status: 'completed', score: '182 - 156' },
-  { id: 4, team1: 'Shadow Kings', team2: 'Blaze Unit', game: 'Mortal Kombat', date: 'Aug 19', time: '04:00 PM', status: 'completed', score: '3 - 1' },
-  { id: 5, team1: 'Neon Falcons', team2: 'Iron Serpents', game: 'FC26', date: 'Aug 20', time: '01:00 PM', status: 'upcoming', score: null },
-  { id: 6, team1: 'Void Reapers', team2: 'Delta Squad', game: 'Call of Duty', date: 'Aug 20', time: '03:30 PM', status: 'upcoming', score: null },
-  { id: 7, team1: 'Turbo Titans', team2: 'Apex Vipers', game: 'Fortnite', date: 'Aug 21', time: '09:00 AM', status: 'upcoming', score: null },
-  { id: 8, team1: 'Phantom Lions', team2: 'Neon Falcons', game: 'FC26', date: 'Aug 19', time: '06:00 PM', status: 'completed', score: '1 - 0' },
+  { id: 1, team1: 'University of Ghana', team2: 'UPSA',                      game: 'FC26', date: 'Aug 19', time: '10:00 AM', status: 'completed', score: '2 - 1' },
+  { id: 2, team1: 'KNUST',               team2: 'Central University',         game: 'FC26', date: 'Aug 19', time: '12:00 PM', status: 'completed', score: '3 - 0' },
+  { id: 3, team1: 'GH Media',            team2: 'Pentecost University',       game: 'FC26', date: 'Aug 19', time: '02:00 PM', status: 'completed', score: '1 - 1' },
+  { id: 4, team1: 'Kumasi Technical University', team2: 'University of Ghana', game: 'FC26', date: 'Aug 20', time: '10:00 AM', status: 'live',      score: '1 - 1' },
+  { id: 5, team1: 'UPSA',               team2: 'KNUST',                       game: 'FC26', date: 'Aug 20', time: '12:00 PM', status: 'upcoming',   score: null },
+  { id: 6, team1: 'Central University', team2: 'GH Media',                    game: 'FC26', date: 'Aug 20', time: '02:00 PM', status: 'upcoming',   score: null },
+  { id: 7, team1: 'Pentecost University', team2: 'Kumasi Technical University',game: 'FC26', date: 'Aug 21', time: '10:00 AM', status: 'upcoming',   score: null },
+  { id: 8, team1: 'KNUST',               team2: 'University of Ghana',        game: 'FC26', date: 'Aug 21', time: '12:00 PM', status: 'upcoming',   score: null },
 ];
 
 const LEADERBOARD_DATA = [
-  { rank: 1, team: 'Phantom Lions', abbr: 'PL', color: '#ffd700', matches: 6, wins: 5, losses: 1, points: 15 },
-  { rank: 2, team: 'Storm Wolves', abbr: 'SW', color: '#00d4ff', matches: 6, wins: 4, losses: 2, points: 12 },
-  { rank: 3, team: 'Shadow Kings', abbr: 'SK', color: '#ff3a3a', matches: 5, wins: 4, losses: 1, points: 12 },
-  { rank: 4, team: 'Apex Vipers', abbr: 'AV', color: '#a855f7', matches: 5, wins: 3, losses: 2, points: 9 },
-  { rank: 5, team: 'Gold Eagles', abbr: 'GE', color: '#ffd700', matches: 5, wins: 3, losses: 2, points: 9 },
-  { rank: 6, team: 'Neon Falcons', abbr: 'NF', color: '#00ff88', matches: 6, wins: 2, losses: 4, points: 6 },
-  { rank: 7, team: 'Cyber Hawks', abbr: 'CH', color: '#ff8c00', matches: 5, wins: 2, losses: 3, points: 6 },
-  { rank: 8, team: 'Void Reapers', abbr: 'VR', color: '#a855f7', matches: 4, wins: 1, losses: 3, points: 3 },
+  { rank: 1, team: 'KNUST',                     abbr: 'KN',  color: '#ffd700', matches: 1, wins: 1, losses: 0, points: 3 },
+  { rank: 2, team: 'University of Ghana',        abbr: 'UG',  color: '#007a3d', matches: 1, wins: 1, losses: 0, points: 3 },
+  { rank: 3, team: 'GH Media',                  abbr: 'GM',  color: '#a855f7', matches: 1, wins: 0, losses: 0, points: 1 },
+  { rank: 4, team: 'Pentecost University',       abbr: 'PU',  color: '#00ff88', matches: 1, wins: 0, losses: 0, points: 1 },
+  { rank: 5, team: 'UPSA',                       abbr: 'UP',  color: '#00d4ff', matches: 1, wins: 0, losses: 1, points: 0 },
+  { rank: 6, team: 'Central University',         abbr: 'CU',  color: '#ff3a3a', matches: 1, wins: 0, losses: 1, points: 0 },
+  { rank: 7, team: 'Kumasi Technical University',abbr: 'KTU', color: '#ff8c00', matches: 0, wins: 0, losses: 0, points: 0 },
 ];
 
 const STREAM_SCHEDULE = [
