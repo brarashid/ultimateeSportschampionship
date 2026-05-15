@@ -110,13 +110,13 @@ const GAMES_DATA = [
 ];
 
 const TEAMS_DATA = [
-  { name: 'University of Ghana', game: 'FC26', color: '#007a3d', abbr: 'UG' },
-  { name: 'UPSA', game: 'FC26', color: '#00d4ff', abbr: 'UP' },
-  { name: 'GH Media', game: 'FC26', color: '#a855f7', abbr: 'GM' },
-  { name: 'Central University', game: 'FC26', color: '#ff3a3a', abbr: 'CU' },
-  { name: 'KNUST', game: 'FC26', color: '#ffd700', abbr: 'KN' },
-  { name: 'Kumasi Technical University', game: 'FC26', color: '#ff8c00', abbr: 'KTU' },
-  { name: 'Pentecost University', game: 'FC26', color: '#00ff88', abbr: 'PU' },
+  { name: 'University of Ghana',         game: 'FC26', color: '#007a3d', abbr: 'UG',  logo: 'Team logos/University of Ghana logo.png' },
+  { name: 'UPSA',                        game: 'FC26', color: '#00d4ff', abbr: 'UP',  logo: 'Team logos/UPSA logo.png' },
+  { name: 'GH Media',                    game: 'FC26', color: '#a855f7', abbr: 'GM',  logo: 'Team logos/GH Media logo.png' },
+  { name: 'Central University',          game: 'FC26', color: '#ff3a3a', abbr: 'CU',  logo: 'Team logos/Central University logo.png' },
+  { name: 'KNUST',                       game: 'FC26', color: '#ffd700', abbr: 'KN',  logo: 'Team logos/KNUST logo.png' },
+  { name: 'Kumasi Technical University', game: 'FC26', color: '#ff8c00', abbr: 'KTU', logo: 'Team logos/Kumasi Technical University logo.png' },
+  { name: 'Pentecost University',        game: 'FC26', color: '#00ff88', abbr: 'PU',  logo: 'Team logos/Pentecost University logo.png' },
 ];
 
 const PLAYERS_DATA = [
@@ -389,7 +389,9 @@ function renderTeams() {
   const container = document.getElementById('teams-grid');
   container.innerHTML = TEAMS_DATA.map(t => `
     <div class="team-card">
-      <div class="team-logo" style="background:${t.color}20;border:1px solid ${t.color}40;color:${t.color}">${t.abbr}</div>
+      <div class="team-logo" style="background:${t.color}20;border:1px solid ${t.color}40;">
+        <img src="${t.logo.replace(/ /g,'%20')}" alt="${t.name}" style="width:100%;height:100%;object-fit:contain;" onerror="this.replaceWith(document.createTextNode('${t.abbr}'))" />
+      </div>
       <div class="team-name">${t.name}</div>
       <div class="team-game">${t.game}</div>
     </div>
@@ -434,12 +436,18 @@ function renderFixtures(filter = 'all') {
         </span>
       </div>
       <div class="fixture-teams">
-        <span class="fixture-team" style="text-align:right">${f.team1}</span>
+        <div class="fixture-team-wrap" style="text-align:right">
+          ${(() => { const t = TEAMS_DATA.find(t => t.name === f.team1); return t ? `<div class="fixture-team-logo"><img src="${t.logo.replace(/ /g,'%20')}" alt="${f.team1}" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none'" /></div>` : ''; })()}
+          <span class="fixture-team">${f.team1}</span>
+        </div>
         ${f.score
           ? `<span class="fixture-score">${f.score}</span>`
           : `<span class="fixture-vs">VS</span>`
         }
-        <span class="fixture-team" style="text-align:left">${f.team2}</span>
+        <div class="fixture-team-wrap" style="text-align:left">
+          ${(() => { const t = TEAMS_DATA.find(t => t.name === f.team2); return t ? `<div class="fixture-team-logo"><img src="${t.logo.replace(/ /g,'%20')}" alt="${f.team2}" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none'" /></div>` : ''; })()}
+          <span class="fixture-team">${f.team2}</span>
+        </div>
       </div>
       <div class="fixture-meta">
         <div class="fixture-time">${f.date}, ${f.time}</div>
@@ -476,7 +484,9 @@ function renderLeaderboard() {
         <td><span class="rank-cell ${rankClass}">${entry.rank}</span></td>
         <td>
           <div class="team-cell">
-            <div class="team-mini-logo" style="background:${entry.color}20;color:${entry.color}">${entry.abbr}</div>
+            <div class="team-mini-logo" style="background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);">
+              ${(() => { const t = TEAMS_DATA.find(t => t.name === entry.team); return t ? `<img src="${t.logo.replace(/ /g,'%20')}" alt="${entry.team}" style="width:100%;height:100%;object-fit:contain;" onerror="this.style.display='none'" />` : entry.abbr; })()}
+            </div>
             <span class="team-cell-name">${entry.team}</span>
           </div>
         </td>
