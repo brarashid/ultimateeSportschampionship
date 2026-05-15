@@ -30,7 +30,7 @@ const GAMES_DATA = [
     featured: true,
     color: '#ffd700',
     bg: 'linear-gradient(135deg,#1a1200,#332800)',
-    image: 'EA FC 26 1.png',
+    image: 'images/EA FC 26 1.png',
     description: 'The beautiful game goes digital. Compete in Africa\'s most competitive FIFA tournament with true-to-life gameplay and next-gen mechanics.',
     rules: [
       'Standard FC26 tournament settings apply',
@@ -50,7 +50,7 @@ const GAMES_DATA = [
     featured: false,
     color: '#00d4ff',
     bg: 'linear-gradient(135deg,#001220,#002240)',
-    image: 'Call of Duty 4 Modern Warfare Remastered….jpg',
+    image: 'images/Call of Duty 4 Modern Warfare Remastered….jpg',
     description: 'Squad-based warfare on competitive multiplayer maps. Prove your tactical IQ and gunfight mechanics against the best.',
     rules: [
       'Team size: 5 players + 1 substitute',
@@ -70,7 +70,7 @@ const GAMES_DATA = [
     featured: false,
     color: '#a855f7',
     bg: 'linear-gradient(135deg,#130a2a,#220f44)',
-    image: 'Fortnite.jpg',
+    image: 'images/Fortnite.jpg',
     description: 'Build, battle, and outlast the competition in high-stakes battle royale format with custom lobby settings. Whether you\'re dropping solo or locking in with a duo partner, this tournament tests your building speed, game sense, and clutch plays under pressure. Compete against Ghana\'s sharpest Fortnite players in a structured competitive format with live spectating.',
     rules: [
       'Custom lobby — no public match entries',
@@ -96,7 +96,7 @@ const GAMES_DATA = [
     featured: false,
     color: '#ff3a3a',
     bg: 'linear-gradient(135deg,#200000,#3d0000)',
-    image: 'Mortal Kombat 9.jpg',
+    image: 'images/Mortal Kombat 9.jpg',
     description: 'The ultimate fighting game showcase. Master your kombatant and execute perfect combos in high-pressure bracket play.',
     rules: [
       'Best of 3 games per set; best of 5 for semifinals and finals',
@@ -120,35 +120,35 @@ const TEAMS_DATA = [
 ];
 
 const PLAYERS_DATA = [
-  { name: 'Kwame Asante', nick: 'KWAME_GH', role: 'Striker / FIFA', stats: ['97 ATK', '4.8 KDA'], color: '#ffd700' },
-  { name: 'Amara Diallo', nick: 'PHANTOM_X', role: 'Rifler / CoD', stats: ['88 WIN%', '3.2 KDA'], color: '#00d4ff' },
-  { name: 'Tunde Okafor', nick: 'SHADOWBLADE', role: 'IGL / CoD', stats: ['91 WIN%', '2.9 KDA'], color: '#a855f7' },
-  { name: 'Kofi Mensah', nick: 'GOLDEN_K', role: 'Goalkeeper / FIFA', stats: ['95 DEF', '4.1 SVR'], color: '#00ff88' },
-  { name: 'Ife Adeyemi', nick: 'STORM_IFE', role: 'Fighter / MK', stats: ['89 WIN%', '72 KOs'], color: '#ff3a3a' },
-  { name: 'Nana Owusu', nick: 'NANO99', role: 'Builder / Fortnite', stats: ['83 WIN%', '6.1 ELO'], color: '#ff8c00' },
-  { name: 'Zara Kamau', nick: 'ZERO_Z', role: 'Sniper / CoD', stats: ['79 HS%', '4.4 KDA'], color: '#00d4ff' },
-  { name: 'Emeka Obi', nick: 'VENOM_E', role: 'Midfield / FIFA', stats: ['93 PAS', '4.6 RNG'], color: '#ffd700' },
+  { name: 'Kwame Asante', nick: 'KWAME_GH',   role: 'Striker / FC26',       stats: ['97 ATK', '88 SHT'], color: '#ffd700' },
+  { name: 'Amara Diallo', nick: 'PHANTOM_X',  role: 'Winger / FC26',         stats: ['92 SPD', '85 DRB'], color: '#00d4ff' },
+  { name: 'Tunde Okafor', nick: 'SHADOWBLADE',role: 'Midfielder / FC26',     stats: ['91 PAS', '87 VIS'], color: '#a855f7' },
+  { name: 'Kofi Mensah',  nick: 'GOLDEN_K',   role: 'Goalkeeper / FC26',     stats: ['95 REF', '90 SVR'], color: '#00ff88' },
+  { name: 'Ife Adeyemi',  nick: 'STORM_IFE',  role: 'Defender / FC26',       stats: ['89 DEF', '86 TAC'], color: '#ff3a3a' },
+  { name: 'Nana Owusu',   nick: 'NANO99',     role: 'Left Back / FC26',      stats: ['83 SPD', '80 CRS'], color: '#ff8c00' },
+  { name: 'Zara Kamau',   nick: 'ZERO_Z',     role: 'Right Winger / FC26',   stats: ['88 DRB', '84 SHT'], color: '#00d4ff' },
+  { name: 'Emeka Obi',    nick: 'VENOM_E',    role: 'Attacking Mid / FC26',  stats: ['93 PAS', '91 ATK'], color: '#ffd700' },
 ];
 
 const FIXTURES_DATA = [
-  { id: 1, team1: 'University of Ghana', team2: 'UPSA',                      game: 'FC26', date: 'Aug 19', time: '10:00 AM', status: 'completed', score: '2 - 1' },
-  { id: 2, team1: 'KNUST',               team2: 'Central University',         game: 'FC26', date: 'Aug 19', time: '12:00 PM', status: 'completed', score: '3 - 0' },
-  { id: 3, team1: 'GH Media',            team2: 'Pentecost University',       game: 'FC26', date: 'Aug 19', time: '02:00 PM', status: 'completed', score: '1 - 1' },
-  { id: 4, team1: 'Kumasi Technical University', team2: 'University of Ghana', game: 'FC26', date: 'Aug 20', time: '10:00 AM', status: 'live',      score: '1 - 1' },
-  { id: 5, team1: 'UPSA',               team2: 'KNUST',                       game: 'FC26', date: 'Aug 20', time: '12:00 PM', status: 'upcoming',   score: null },
-  { id: 6, team1: 'Central University', team2: 'GH Media',                    game: 'FC26', date: 'Aug 20', time: '02:00 PM', status: 'upcoming',   score: null },
-  { id: 7, team1: 'Pentecost University', team2: 'Kumasi Technical University',game: 'FC26', date: 'Aug 21', time: '10:00 AM', status: 'upcoming',   score: null },
-  { id: 8, team1: 'KNUST',               team2: 'University of Ghana',        game: 'FC26', date: 'Aug 21', time: '12:00 PM', status: 'upcoming',   score: null },
+  { id: 1, team1: 'University of Ghana',         team2: 'UPSA',                       game: 'FC26', date: 'Aug 19', time: '10:00 AM', status: 'upcoming', score: null },
+  { id: 2, team1: 'KNUST',                       team2: 'Central University',          game: 'FC26', date: 'Aug 19', time: '12:00 PM', status: 'upcoming', score: null },
+  { id: 3, team1: 'GH Media',                    team2: 'Pentecost University',        game: 'FC26', date: 'Aug 19', time: '02:00 PM', status: 'upcoming', score: null },
+  { id: 4, team1: 'Kumasi Technical University', team2: 'University of Ghana',         game: 'FC26', date: 'Aug 20', time: '10:00 AM', status: 'upcoming', score: null },
+  { id: 5, team1: 'UPSA',                        team2: 'KNUST',                       game: 'FC26', date: 'Aug 20', time: '12:00 PM', status: 'upcoming', score: null },
+  { id: 6, team1: 'Central University',          team2: 'GH Media',                    game: 'FC26', date: 'Aug 20', time: '02:00 PM', status: 'upcoming', score: null },
+  { id: 7, team1: 'Pentecost University',        team2: 'Kumasi Technical University', game: 'FC26', date: 'Aug 21', time: '10:00 AM', status: 'upcoming', score: null },
+  { id: 8, team1: 'KNUST',                       team2: 'University of Ghana',         game: 'FC26', date: 'Aug 21', time: '12:00 PM', status: 'upcoming', score: null },
 ];
 
 const LEADERBOARD_DATA = [
-  { rank: 1, team: 'KNUST',                     abbr: 'KN',  color: '#ffd700', matches: 1, wins: 1, losses: 0, points: 3 },
-  { rank: 2, team: 'University of Ghana',        abbr: 'UG',  color: '#007a3d', matches: 1, wins: 1, losses: 0, points: 3 },
-  { rank: 3, team: 'GH Media',                  abbr: 'GM',  color: '#a855f7', matches: 1, wins: 0, losses: 0, points: 1 },
-  { rank: 4, team: 'Pentecost University',       abbr: 'PU',  color: '#00ff88', matches: 1, wins: 0, losses: 0, points: 1 },
-  { rank: 5, team: 'UPSA',                       abbr: 'UP',  color: '#00d4ff', matches: 1, wins: 0, losses: 1, points: 0 },
-  { rank: 6, team: 'Central University',         abbr: 'CU',  color: '#ff3a3a', matches: 1, wins: 0, losses: 1, points: 0 },
-  { rank: 7, team: 'Kumasi Technical University',abbr: 'KTU', color: '#ff8c00', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 1, team: 'University of Ghana',         abbr: 'UG',  color: '#007a3d', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 2, team: 'UPSA',                        abbr: 'UP',  color: '#00d4ff', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 3, team: 'GH Media',                    abbr: 'GM',  color: '#a855f7', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 4, team: 'Central University',          abbr: 'CU',  color: '#ff3a3a', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 5, team: 'KNUST',                       abbr: 'KN',  color: '#ffd700', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 6, team: 'Kumasi Technical University', abbr: 'KTU', color: '#ff8c00', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 7, team: 'Pentecost University',        abbr: 'PU',  color: '#00ff88', matches: 0, wins: 0, losses: 0, points: 0 },
 ];
 
 const STREAM_SCHEDULE = [
@@ -298,7 +298,7 @@ function updateActiveSection() {
 // COUNTDOWN TIMER
 // ============================================================
 function initCountdown() {
-  const targetDate = new Date('2026-08-20T09:00:00').getTime();
+  const targetDate = new Date('2026-06-06T09:00:00').getTime();
 
   function tick() {
     const now = Date.now();
@@ -349,7 +349,7 @@ function renderGames() {
       <div class="game-thumb">
         <div class="game-thumb-placeholder" style="background:${g.bg}">
           <img
-            src="${g.image ? encodeURIComponent(g.image) : 'https://images.unsplash.com/photo-' + (g.id === 'fortnite' ? '1493711662062-fa541adb3fc8' : '1511512578047-dfb367046420') + '?w=400&q=80&auto=format&fit=crop'}"
+            src="${g.image ? g.image.replace(/ /g, '%20') : 'https://images.unsplash.com/photo-' + (g.id === 'fortnite' ? '1493711662062-fa541adb3fc8' : '1511512578047-dfb367046420') + '?w=400&q=80&auto=format&fit=crop'}"
             alt="${g.title}"
             loading="lazy"
             onerror="this.style.display='none'"

@@ -996,7 +996,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('FC26 background (5).png') center center / cover no-repeat;
+      background: url('images/FC26 background (5).png') center center / cover no-repeat;
       opacity: 0.18;
       z-index: 0;
     }
@@ -1618,7 +1618,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('FC26 background (6).png') center center / cover no-repeat;
+      background: url('images/FC26 background (6).png') center center / cover no-repeat;
       opacity: 0.18;
       z-index: 0;
     }
@@ -1867,7 +1867,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('FC26 background (1).png') center center / cover no-repeat;
+      background: url('images/FC26 background (1).png') center center / cover no-repeat;
       opacity: 0.18;
       z-index: 0;
     }
@@ -2105,7 +2105,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('FC26 background (7).png') center center / cover no-repeat;
+      background: url('images/FC26 background (7).png') center center / cover no-repeat;
       opacity: 0.18;
       z-index: 0;
     }
