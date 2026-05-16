@@ -609,8 +609,8 @@ function markInput(id, error) {
   if (el) el.classList.toggle('error', error);
 }
 
-// Paste your Google Apps Script web app URL here after deploying
-const REGISTRATION_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+// After deploying the Apps Script, paste the Web App URL here (same URL for both constants below)
+const REGISTRATION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOa2ENY17f6iV0Xaz1gGdIXn72GA9xiz0KyC0o8V26S3U16xz1zj9MzvZnVf5M8IPw0g/exec';
 
 function initRegistrationForm() {
   document.getElementById('reg-form').addEventListener('submit', async e => {
@@ -653,8 +653,8 @@ function initRegistrationForm() {
   });
 }
 
-// Paste your Google Apps Script web app URL for the contact form here
-const CONTACT_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+// Use the same Web App URL as REGISTRATION_SCRIPT_URL — one script handles both forms
+const CONTACT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOa2ENY17f6iV0Xaz1gGdIXn72GA9xiz0KyC0o8V26S3U16xz1zj9MzvZnVf5M8IPw0g/exec';
 
 function initContactForm() {
   document.getElementById('contact-form').addEventListener('submit', async e => {
