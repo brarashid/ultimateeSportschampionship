@@ -609,8 +609,51 @@ function markInput(id, error) {
   if (el) el.classList.toggle('error', error);
 }
 
-// After deploying the Apps Script, paste the Web App URL here (same URL for both constants below)
-const REGISTRATION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOa2ENY17f6iV0Xaz1gGdIXn72GA9xiz0KyC0o8V26S3U16xz1zj9MzvZnVf5M8IPw0g/exec';
+// Google Apps Script Web App URL — handles both forms
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbzOa2ENY17f6iV0Xaz1gGdIXn72GA9xiz0KyC0o8V26S3U16xz1zj9MzvZnVf5M8IPw0g/exec';
+
+// Submits data via a hidden form+iframe — works from file:// and any hosted origin
+function submitToGAS(data) {
+  return new Promise((resolve) => {
+    const iframeName = 'gas_' + Date.now();
+
+    const iframe = document.createElement('iframe');
+    iframe.name = iframeName;
+    iframe.style.cssText = 'display:none;width:0;height:0;border:none;position:absolute;';
+    document.body.appendChild(iframe);
+
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = GAS_URL;
+    form.target = iframeName;
+    form.style.display = 'none';
+
+    Object.entries(data).forEach(([key, val]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = val;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      setTimeout(() => {
+        try { document.body.removeChild(form); } catch (_) {}
+        try { document.body.removeChild(iframe); } catch (_) {}
+      }, 200);
+      resolve();
+    };
+
+    iframe.onload = finish;
+    setTimeout(finish, 6000); // fallback if onload never fires
+    form.submit();
+  });
+}
 
 function initRegistrationForm() {
   document.getElementById('reg-form').addEventListener('submit', async e => {
@@ -633,28 +676,18 @@ function initRegistrationForm() {
 
     const btn = e.target.querySelector('.submit-btn');
     btn.disabled = true;
-    btn.textContent = 'Submitting…';
+    btn.innerHTML = '<i data-lucide="loader" style="width:16px;height:16px;"></i> Submitting…';
+    lucide.createIcons();
 
-    try {
-      await fetch(REGISTRATION_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ name, game, email, phone, location: loc, participationType: type, type: 'registration' }),
-        mode: 'no-cors'
-      });
-      showToast('success', 'Registration Submitted!', `Welcome, ${name}! You'll receive a confirmation email shortly.`);
-      e.target.reset();
-    } catch {
-      showToast('error', 'Submission Failed', 'Please check your connection and try again.');
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Submit Registration';
-    }
+    await submitToGAS({ formType: 'registration', name, game, email, phone, location: loc, participationType: type });
+
+    showToast('success', 'Registration Submitted!', `Welcome, ${name}! You'll receive a confirmation email shortly.`);
+    e.target.reset();
+    btn.disabled = false;
+    btn.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;"></i> Submit Registration';
+    lucide.createIcons();
   });
 }
-
-// Use the same Web App URL as REGISTRATION_SCRIPT_URL — one script handles both forms
-const CONTACT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzOa2ENY17f6iV0Xaz1gGdIXn72GA9xiz0KyC0o8V26S3U16xz1zj9MzvZnVf5M8IPw0g/exec';
 
 function initContactForm() {
   document.getElementById('contact-form').addEventListener('submit', async e => {
@@ -673,23 +706,16 @@ function initContactForm() {
 
     const btn = e.target.querySelector('.submit-btn');
     btn.disabled = true;
-    btn.textContent = 'Sending…';
+    btn.innerHTML = '<i data-lucide="loader" style="width:16px;height:16px;"></i> Sending…';
+    lucide.createIcons();
 
-    try {
-      await fetch(CONTACT_SCRIPT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify({ name, email, subject, message: msg, type: 'contact' }),
-        mode: 'no-cors'
-      });
-      showToast('info', 'Message Sent!', 'Our team will get back to you within 24 hours.');
-      e.target.reset();
-    } catch {
-      showToast('error', 'Submission Failed', 'Please check your connection and try again.');
-    } finally {
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
-    }
+    await submitToGAS({ formType: 'contact', name, email, subject, message: msg });
+
+    showToast('info', 'Message Sent!', 'Our team will get back to you within 24 hours.');
+    e.target.reset();
+    btn.disabled = false;
+    btn.innerHTML = '<i data-lucide="send" style="width:16px;height:16px;"></i> Send Message';
+    lucide.createIcons();
   });
 }
 

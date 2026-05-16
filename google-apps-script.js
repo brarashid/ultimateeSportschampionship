@@ -1,164 +1,136 @@
 /**
  * Ultimate eSports Championship — Google Apps Script
  *
- * HOW TO SET UP:
- * 1. Go to https://sheets.google.com and create a new spreadsheet.
- *    Name it "UEC 2026 Submissions" (or anything you like).
- * 2. In the spreadsheet, click Extensions → Apps Script.
- * 3. Delete all existing code and paste the entire contents of this file.
- * 4. Click Save (Ctrl+S), then click Deploy → New Deployment.
- * 5. Set type to "Web app".
- * 6. Set "Execute as" → Me.
- * 7. Set "Who has access" → Anyone.
- * 8. Click Deploy and copy the Web App URL.
- * 9. In main.js, replace BOTH placeholder values:
- *      REGISTRATION_SCRIPT_URL = 'paste-your-url-here'
- *      CONTACT_SCRIPT_URL      = 'paste-your-url-here'   ← same URL
- * 10. Done! Test by submitting a form on your site.
- *
- * The script automatically creates two sheets:
- *   • "Registrations"    — all player/team sign-ups
- *   • "Contact Messages" — all contact form messages
- * You will receive an email notification for every submission.
+ * IMPORTANT — You must update the Apps Script with this new version:
+ * 1. Go to your Google Sheet → Extensions → Apps Script
+ * 2. Delete ALL existing code
+ * 3. Paste the entire contents of this file
+ * 4. Save (Ctrl+S)
+ * 5. Click Deploy → New Deployment → Web app
+ *    - Execute as: Me
+ *    - Who has access: Anyone
+ * 6. Authorize all permissions when prompted
+ * 7. Copy the new URL and paste it into main.js as GAS_URL
  */
 
-// ─── Change this to the email that should receive notifications ───
 const NOTIFY_EMAIL = 'boyefioabdulrashid60@gmail.com';
 
-// ─── Entry point called by Google on every form POST ──────────────
 function doPost(e) {
   try {
-    const data = JSON.parse(e.postData.contents);
-    const timestamp = new Date().toLocaleString('en-GH', { timeZone: 'Africa/Accra' });
+    const d = e.parameter; // reads hidden form fields submitted by the browser
 
-    if (data.type === 'registration') {
-      saveRegistration(data, timestamp);
-      sendRegistrationEmail(data, timestamp);
-    } else if (data.type === 'contact') {
-      saveContactMessage(data, timestamp);
-      sendContactEmail(data, timestamp);
+    if (d.formType === 'registration') {
+      saveRegistration(d);
+      sendRegistrationEmail(d);
+    } else if (d.formType === 'contact') {
+      saveContactMessage(d);
+      sendContactEmail(d);
     }
 
     return ContentService
-      .createTextOutput(JSON.stringify({ status: 'success' }))
-      .setMimeType(ContentService.MimeType.JSON);
+      .createTextOutput('OK')
+      .setMimeType(ContentService.MimeType.TEXT);
 
   } catch (err) {
     return ContentService
-      .createTextOutput(JSON.stringify({ status: 'error', message: err.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
+      .createTextOutput('Error: ' + err.toString())
+      .setMimeType(ContentService.MimeType.TEXT);
   }
 }
 
-// ─── Save registration to the "Registrations" sheet ───────────────
-function saveRegistration(data, timestamp) {
+function saveRegistration(d) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let sheet = ss.getSheetByName('Registrations');
 
   if (!sheet) {
     sheet = ss.insertSheet('Registrations');
-    sheet.appendRow([
-      'Timestamp', 'Player / Team Name', 'Game', 'Email',
-      'Phone', 'Location', 'Participation Type'
-    ]);
-    sheet.getRange(1, 1, 1, 7).setFontWeight('bold').setBackground('#1a1a2e').setFontColor('#ffd700');
+    const header = sheet.getRange(1, 1, 1, 7);
+    sheet.appendRow(['Timestamp', 'Player / Team Name', 'Game', 'Email', 'Phone', 'Location', 'Participation Type']);
+    header.setFontWeight('bold').setBackground('#1a1a2e').setFontColor('#ffd700');
     sheet.setFrozenRows(1);
   }
 
-  sheet.appendRow([
-    timestamp,
-    data.name,
-    data.game,
-    data.email,
-    data.phone,
-    data.location,
-    data.participationType
-  ]);
+  const timestamp = new Date().toLocaleString('en-GH', { timeZone: 'Africa/Accra' });
+  sheet.appendRow([timestamp, d.name, d.game, d.email, d.phone, d.location, d.participationType]);
 }
 
-// ─── Save contact message to the "Contact Messages" sheet ─────────
-function saveContactMessage(data, timestamp) {
+function saveContactMessage(d) {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   let sheet = ss.getSheetByName('Contact Messages');
 
   if (!sheet) {
     sheet = ss.insertSheet('Contact Messages');
+    const header = sheet.getRange(1, 1, 1, 5);
     sheet.appendRow(['Timestamp', 'Name', 'Email', 'Subject', 'Message']);
-    sheet.getRange(1, 1, 1, 5).setFontWeight('bold').setBackground('#1a1a2e').setFontColor('#ffd700');
+    header.setFontWeight('bold').setBackground('#1a1a2e').setFontColor('#ffd700');
     sheet.setFrozenRows(1);
   }
 
-  sheet.appendRow([
-    timestamp,
-    data.name,
-    data.email,
-    data.subject || '(no subject)',
-    data.message
-  ]);
+  const timestamp = new Date().toLocaleString('en-GH', { timeZone: 'Africa/Accra' });
+  sheet.appendRow([timestamp, d.name, d.email, d.subject || '(no subject)', d.message]);
 }
 
-// ─── Email notification for new registration ──────────────────────
-function sendRegistrationEmail(data, timestamp) {
-  const gameLabels = {
-    fifa: 'FC26', cod: 'Call of Duty', fortnite: 'Fortnite', mk: 'Mortal Kombat'
-  };
-  const gameName = gameLabels[data.game] || data.game;
+function sendRegistrationEmail(d) {
+  const gameLabels = { fifa: 'FC26', cod: 'Call of Duty', fortnite: 'Fortnite', mk: 'Mortal Kombat' };
+  const gameName = gameLabels[d.game] || d.game;
+  const timestamp = new Date().toLocaleString('en-GH', { timeZone: 'Africa/Accra' });
 
   MailApp.sendEmail({
     to: NOTIFY_EMAIL,
-    subject: `[UEC 2026] New Registration: ${data.name} — ${gameName}`,
-    htmlBody: `
-      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0d0d1a;color:#e0e0e0;border-radius:8px;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:24px;text-align:center;border-bottom:2px solid #ffd700;">
-          <h1 style="color:#ffd700;margin:0;font-size:22px;letter-spacing:2px;">ULTIMATE eSPORTS CHAMPIONSHIP</h1>
-          <p style="color:#a0a0b0;margin:8px 0 0;font-size:13px;">New Player Registration</p>
-        </div>
-        <div style="padding:28px;">
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;color:#a0a0b0;width:40%;">Player / Team Name</td><td style="padding:10px 0;color:#ffffff;font-weight:bold;">${data.name}</td></tr>
-            <tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Game</td><td style="padding:10px 8px;color:#ffd700;font-weight:bold;">${gameName}</td></tr>
-            <tr><td style="padding:10px 0;color:#a0a0b0;">Email</td><td style="padding:10px 0;color:#00d4ff;">${data.email}</td></tr>
-            <tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Phone</td><td style="padding:10px 8px;color:#ffffff;">${data.phone}</td></tr>
-            <tr><td style="padding:10px 0;color:#a0a0b0;">Location</td><td style="padding:10px 0;color:#ffffff;">${data.location}</td></tr>
-            <tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Participation Type</td><td style="padding:10px 8px;color:#ffffff;">${data.participationType}</td></tr>
-            <tr><td style="padding:10px 0;color:#a0a0b0;">Submitted At</td><td style="padding:10px 0;color:#a0a0b0;font-size:13px;">${timestamp}</td></tr>
-          </table>
-        </div>
-        <div style="background:#111;padding:16px;text-align:center;font-size:12px;color:#555;">
-          UEC 2026 — POWERPLAY INTERNATIONAL, East Legon, Accra, Ghana
-        </div>
-      </div>
-    `
+    subject: '[UEC 2026] New Registration: ' + d.name + ' — ' + gameName,
+    htmlBody:
+      '<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0d0d1a;color:#e0e0e0;border-radius:8px;overflow:hidden;">' +
+        '<div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:24px;text-align:center;border-bottom:2px solid #ffd700;">' +
+          '<h1 style="color:#ffd700;margin:0;font-size:22px;letter-spacing:2px;">ULTIMATE eSPORTS CHAMPIONSHIP</h1>' +
+          '<p style="color:#a0a0b0;margin:8px 0 0;font-size:13px;">New Player Registration</p>' +
+        '</div>' +
+        '<div style="padding:28px;">' +
+          '<table style="width:100%;border-collapse:collapse;">' +
+            '<tr><td style="padding:10px 0;color:#a0a0b0;width:40%;">Player / Team Name</td><td style="padding:10px 0;color:#fff;font-weight:bold;">' + d.name + '</td></tr>' +
+            '<tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Game</td><td style="padding:10px 8px;color:#ffd700;font-weight:bold;">' + gameName + '</td></tr>' +
+            '<tr><td style="padding:10px 0;color:#a0a0b0;">Email</td><td style="padding:10px 0;color:#00d4ff;">' + d.email + '</td></tr>' +
+            '<tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Phone</td><td style="padding:10px 8px;color:#fff;">' + d.phone + '</td></tr>' +
+            '<tr><td style="padding:10px 0;color:#a0a0b0;">Location</td><td style="padding:10px 0;color:#fff;">' + d.location + '</td></tr>' +
+            '<tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Participation Type</td><td style="padding:10px 8px;color:#fff;">' + d.participationType + '</td></tr>' +
+            '<tr><td style="padding:10px 0;color:#a0a0b0;">Submitted At</td><td style="padding:10px 0;color:#a0a0b0;font-size:13px;">' + timestamp + '</td></tr>' +
+          '</table>' +
+        '</div>' +
+        '<div style="background:#111;padding:16px;text-align:center;font-size:12px;color:#555;">UEC 2026 — POWERPLAY INTERNATIONAL, East Legon, Accra, Ghana</div>' +
+      '</div>'
   });
 }
 
-// ─── Email notification for new contact message ───────────────────
-function sendContactEmail(data, timestamp) {
+function sendContactEmail(d) {
+  const timestamp = new Date().toLocaleString('en-GH', { timeZone: 'Africa/Accra' });
+
   MailApp.sendEmail({
     to: NOTIFY_EMAIL,
-    subject: `[UEC 2026] Contact Form: ${data.subject || 'No Subject'} — from ${data.name}`,
-    htmlBody: `
-      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0d0d1a;color:#e0e0e0;border-radius:8px;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:24px;text-align:center;border-bottom:2px solid #00d4ff;">
-          <h1 style="color:#00d4ff;margin:0;font-size:22px;letter-spacing:2px;">ULTIMATE eSPORTS CHAMPIONSHIP</h1>
-          <p style="color:#a0a0b0;margin:8px 0 0;font-size:13px;">New Contact Form Message</p>
-        </div>
-        <div style="padding:28px;">
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:10px 0;color:#a0a0b0;width:30%;">From</td><td style="padding:10px 0;color:#ffffff;font-weight:bold;">${data.name}</td></tr>
-            <tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Email</td><td style="padding:10px 8px;color:#00d4ff;">${data.email}</td></tr>
-            <tr><td style="padding:10px 0;color:#a0a0b0;">Subject</td><td style="padding:10px 0;color:#ffd700;font-weight:bold;">${data.subject || '(no subject)'}</td></tr>
-            <tr><td style="padding:10px 0;color:#a0a0b0;">Submitted At</td><td style="padding:10px 0;color:#a0a0b0;font-size:13px;">${timestamp}</td></tr>
-          </table>
-          <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.05);border-left:3px solid #00d4ff;border-radius:4px;">
-            <p style="margin:0;color:#a0a0b0;font-size:12px;margin-bottom:8px;">MESSAGE</p>
-            <p style="margin:0;color:#ffffff;line-height:1.7;">${data.message.replace(/\n/g, '<br>')}</p>
-          </div>
-        </div>
-        <div style="background:#111;padding:16px;text-align:center;font-size:12px;color:#555;">
-          UEC 2026 — POWERPLAY INTERNATIONAL, East Legon, Accra, Ghana
-        </div>
-      </div>
-    `
+    subject: '[UEC 2026] Contact: ' + (d.subject || 'No Subject') + ' — from ' + d.name,
+    htmlBody:
+      '<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#0d0d1a;color:#e0e0e0;border-radius:8px;overflow:hidden;">' +
+        '<div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:24px;text-align:center;border-bottom:2px solid #00d4ff;">' +
+          '<h1 style="color:#00d4ff;margin:0;font-size:22px;letter-spacing:2px;">ULTIMATE eSPORTS CHAMPIONSHIP</h1>' +
+          '<p style="color:#a0a0b0;margin:8px 0 0;font-size:13px;">New Contact Message</p>' +
+        '</div>' +
+        '<div style="padding:28px;">' +
+          '<table style="width:100%;border-collapse:collapse;">' +
+            '<tr><td style="padding:10px 0;color:#a0a0b0;width:30%;">From</td><td style="padding:10px 0;color:#fff;font-weight:bold;">' + d.name + '</td></tr>' +
+            '<tr style="background:rgba(255,255,255,0.03);"><td style="padding:10px 8px;color:#a0a0b0;">Email</td><td style="padding:10px 8px;color:#00d4ff;">' + d.email + '</td></tr>' +
+            '<tr><td style="padding:10px 0;color:#a0a0b0;">Subject</td><td style="padding:10px 0;color:#ffd700;font-weight:bold;">' + (d.subject || '(no subject)') + '</td></tr>' +
+            '<tr><td style="padding:10px 0;color:#a0a0b0;">Submitted At</td><td style="padding:10px 0;color:#a0a0b0;font-size:13px;">' + timestamp + '</td></tr>' +
+          '</table>' +
+          '<div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.05);border-left:3px solid #00d4ff;border-radius:4px;">' +
+            '<p style="margin:0;color:#a0a0b0;font-size:12px;margin-bottom:8px;">MESSAGE</p>' +
+            '<p style="margin:0;color:#fff;line-height:1.7;">' + d.message.replace(/\n/g, '<br>') + '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div style="background:#111;padding:16px;text-align:center;font-size:12px;color:#555;">UEC 2026 — POWERPLAY INTERNATIONAL, East Legon, Accra, Ghana</div>' +
+      '</div>'
   });
+}
+
+// Run this once manually to trigger authorization for Gmail + Sheets
+function authorizeScript() {
+  SpreadsheetApp.getActiveSpreadsheet();
+  MailApp.sendEmail(NOTIFY_EMAIL, 'UEC Apps Script Authorized', 'Your Google Apps Script is now authorized and ready to receive form submissions.');
 }
