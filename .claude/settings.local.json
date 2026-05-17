@@ -6,7 +6,9 @@
       "WebFetch(domain:www.ea.com)",
       "Bash(dir \"Team logos\")",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git fetch *)",
+      "Bash(git push *)"
     ]
   }
 }
