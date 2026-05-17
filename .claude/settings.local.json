@@ -3,7 +3,10 @@
     "allow": [
       "Bash(dir \"c:\\\\Users\\\\Administrator\\\\Desktop\\\\ultimateeSportschampionship\")",
       "Bash(findstr /i \"logo1\\\\|logo 1\")",
-      "WebFetch(domain:www.ea.com)"
+      "WebFetch(domain:www.ea.com)",
+      "Bash(dir \"Team logos\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
