@@ -110,13 +110,13 @@ const GAMES_DATA = [
 ];
 
 const TEAMS_DATA = [
-  { name: 'University of Ghana',         game: 'FC26', color: '#007a3d', abbr: 'UG',  logo: 'team-logos/University of Ghana logo.png' },
-  { name: 'UPSA',                        game: 'FC26', color: '#00d4ff', abbr: 'UP',  logo: 'team-logos/UPSA logo.png' },
-  { name: 'GH Media',                    game: 'FC26', color: '#a855f7', abbr: 'GM',  logo: 'team-logos/GH Media logo.png' },
-  { name: 'Central University',          game: 'FC26', color: '#ff3a3a', abbr: 'CU',  logo: 'team-logos/Central University logo.png' },
-  { name: 'KNUST',                       game: 'FC26', color: '#ffd700', abbr: 'KN',  logo: 'team-logos/KNUST logo.png' },
-  { name: 'Kumasi Technical University', game: 'FC26', color: '#ff8c00', abbr: 'KTU', logo: 'team-logos/Kumasi Technical University logo.png' },
-  { name: 'Pentecost University',        game: 'FC26', color: '#00ff88', abbr: 'PU',  logo: 'team-logos/Pentecost University logo.png' },
+  { name: 'University of Ghana',         game: 'FC26', color: '#007a3d', abbr: 'UG',  logo: 'images/University of Ghana logo.png' },
+  { name: 'UPSA',                        game: 'FC26', color: '#00d4ff', abbr: 'UP',  logo: 'images/UPSA logo.png' },
+  { name: 'GH Media',                    game: 'FC26', color: '#a855f7', abbr: 'GM',  logo: 'images/GH Media logo.png' },
+  { name: 'Central University',          game: 'FC26', color: '#ff3a3a', abbr: 'CU',  logo: 'images/Central University logo.png' },
+  { name: 'KNUST',                       game: 'FC26', color: '#ffd700', abbr: 'KN',  logo: 'images/KNUST logo.png' },
+  { name: 'Kumasi Technical University', game: 'FC26', color: '#ff8c00', abbr: 'KTU', logo: 'images/Kumasi Technical University logo.png' },
+  { name: 'Pentecost University',        game: 'FC26', color: '#00ff88', abbr: 'PU',  logo: 'images/Pentecost University logo.png' },
 ];
 
 const PLAYERS_DATA = [
