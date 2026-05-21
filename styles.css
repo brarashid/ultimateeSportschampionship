@@ -411,7 +411,9 @@
     }
 
     [data-theme="light"] .gesf-logo {
-      filter: invert(1) brightness(0) contrast(1);
+      background: rgba(10, 15, 40, 0.85);
+      border-radius: 8px;
+      padding: 4px 8px;
     }
 
     @keyframes gridPulse {
