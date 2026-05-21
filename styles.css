@@ -410,6 +410,10 @@
       background: rgba(0, 0, 0, 0.50);
     }
 
+    [data-theme="light"] .gesf-logo {
+      filter: invert(1) brightness(0) contrast(1);
+    }
+
     @keyframes gridPulse {
       0%, 100% { opacity: 0.4; }
       50% { opacity: 0.8; }
