@@ -117,6 +117,7 @@ const TEAMS_DATA = [
   { name: 'KNUST',                       game: 'FC26', color: '#ffd700', abbr: 'KN',  logo: 'images/KNUST logo.png' },
   { name: 'Kumasi Technical University', game: 'FC26', color: '#ff8c00', abbr: 'KTU', logo: 'images/Kumasi Technical University logo.png' },
   { name: 'Pentecost University',        game: 'FC26', color: '#00ff88', abbr: 'PU',  logo: 'images/Pentecost University logo.png' },
+  { name: 'Accra Technical University', game: 'FC26', color: '#0057b7', abbr: 'ATU', logo: 'images/ATU lgog.png' },
 ];
 
 const PLAYERS_DATA = [
@@ -139,6 +140,8 @@ const FIXTURES_DATA = [
   { id: 6, team1: 'Central University',          team2: 'GH Media',                    game: 'FC26', date: 'Aug 20', time: '02:00 PM', status: 'upcoming', score: null },
   { id: 7, team1: 'Pentecost University',        team2: 'Kumasi Technical University', game: 'FC26', date: 'Aug 21', time: '10:00 AM', status: 'upcoming', score: null },
   { id: 8, team1: 'KNUST',                       team2: 'University of Ghana',         game: 'FC26', date: 'Aug 21', time: '12:00 PM', status: 'upcoming', score: null },
+  { id: 9, team1: 'Accra Technical University', team2: 'UPSA',                        game: 'FC26', date: 'Aug 22', time: '10:00 AM', status: 'upcoming', score: null },
+  { id: 10, team1: 'GH Media',                  team2: 'Accra Technical University',  game: 'FC26', date: 'Aug 22', time: '12:00 PM', status: 'upcoming', score: null },
 ];
 
 const LEADERBOARD_DATA = [
@@ -149,6 +152,7 @@ const LEADERBOARD_DATA = [
   { rank: 5, team: 'KNUST',                       abbr: 'KN',  color: '#ffd700', matches: 0, wins: 0, losses: 0, points: 0 },
   { rank: 6, team: 'Kumasi Technical University', abbr: 'KTU', color: '#ff8c00', matches: 0, wins: 0, losses: 0, points: 0 },
   { rank: 7, team: 'Pentecost University',        abbr: 'PU',  color: '#00ff88', matches: 0, wins: 0, losses: 0, points: 0 },
+  { rank: 8, team: 'Accra Technical University', abbr: 'ATU', color: '#0057b7', matches: 0, wins: 0, losses: 0, points: 0 },
 ];
 
 const STREAM_SCHEDULE = [
