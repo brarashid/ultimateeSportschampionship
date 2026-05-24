@@ -568,11 +568,11 @@ function renderRosters() {
       <button class="roster-header" onclick="toggleRoster(${i})" style="--team-color:${t.color}">
         <div class="roster-header-left">
           <div class="roster-team-logo" style="background:${t.color}20;border:1px solid ${t.color}40;">
-            <img src="${t.logo.replace(/ /g,'%20')}" alt="${t.name}" onerror="this.style.display='none'" />
+            <img src="${t.logo.replace(/ /g,'%20')}" alt="${t.team}" onerror="this.style.display='none'" />
             <span class="roster-abbr" style="color:${t.color}">${t.abbr}</span>
           </div>
           <div>
-            <div class="roster-team-name">${t.name}</div>
+            <div class="roster-team-name">${t.team}</div>
             <div class="roster-team-meta">
               <span class="roster-badge" style="background:${t.color}20;color:${t.color};border:1px solid ${t.color}40">FC26</span>
               <span class="roster-count">30 Players</span>
