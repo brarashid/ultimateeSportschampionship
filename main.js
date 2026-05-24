@@ -391,7 +391,7 @@ function renderGames() {
 // ============================================================
 function renderTeams() {
   const container = document.getElementById('teams-grid');
-  container.innerHTML = TEAMS_DATA.map(t => `
+  const cards = TEAMS_DATA.map(t => `
     <div class="team-card">
       <div class="team-logo" style="background:${t.color}20;border:1px solid ${t.color}40;">
         <img src="${t.logo.replace(/ /g,'%20')}" alt="${t.name}" style="width:100%;height:100%;object-fit:contain;" onerror="this.replaceWith(document.createTextNode('${t.abbr}'))" />
@@ -400,6 +400,7 @@ function renderTeams() {
       <div class="team-game">${t.game}</div>
     </div>
   `).join('');
+  container.innerHTML = `<div class="teams-track">${cards}${cards}</div>`;
 }
 
 // ============================================================

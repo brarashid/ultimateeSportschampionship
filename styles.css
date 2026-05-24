@@ -1566,16 +1566,52 @@
       letter-spacing: 2px;
       margin-bottom: 28px;
       position: relative;
+      text-align: center;
       z-index: 1;
     }
 
     .teams-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 16px;
+      overflow: hidden;
       margin-bottom: 48px;
       position: relative;
       z-index: 1;
+    }
+
+    .teams-grid::before,
+    .teams-grid::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .teams-grid::before {
+      left: 0;
+      background: linear-gradient(to right, var(--bg-section), transparent);
+    }
+
+    .teams-grid::after {
+      right: 0;
+      background: linear-gradient(to left, var(--bg-section), transparent);
+    }
+
+    .teams-track {
+      display: flex;
+      gap: 20px;
+      width: max-content;
+      animation: teams-scroll 28s linear infinite;
+    }
+
+    .teams-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes teams-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .team-card {
@@ -2627,7 +2663,7 @@
       .section-header { margin-bottom: 40px; }
       .section-title { font-size: clamp(28px, 7vw, 48px); }
       .games-grid { grid-template-columns: 1fr; }
-      .teams-grid { grid-template-columns: repeat(7, minmax(110px, 1fr)); overflow-x: auto; }
+      .teams-grid { overflow: hidden; }
       .players-grid { grid-template-columns: 1fr; }
       .news-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; gap: 24px; }
