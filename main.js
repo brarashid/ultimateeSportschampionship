@@ -120,16 +120,6 @@ const TEAMS_DATA = [
   { name: 'Accra Technical University', game: 'FC26', color: '#0057b7', abbr: 'ATU', logo: 'images/ATU lgog.png' },
 ];
 
-const PLAYERS_DATA = [
-  { name: 'Kwame Asante', nick: 'KWAME_GH',   role: 'Striker / FC26',       stats: ['97 ATK', '88 SHT'], color: '#ffd700' },
-  { name: 'Amara Diallo', nick: 'PHANTOM_X',  role: 'Winger / FC26',         stats: ['92 SPD', '85 DRB'], color: '#00d4ff' },
-  { name: 'Tunde Okafor', nick: 'SHADOWBLADE',role: 'Midfielder / FC26',     stats: ['91 PAS', '87 VIS'], color: '#a855f7' },
-  { name: 'Kofi Mensah',  nick: 'GOLDEN_K',   role: 'Goalkeeper / FC26',     stats: ['95 REF', '90 SVR'], color: '#00ff88' },
-  { name: 'Ife Adeyemi',  nick: 'STORM_IFE',  role: 'Defender / FC26',       stats: ['89 DEF', '86 TAC'], color: '#ff3a3a' },
-  { name: 'Nana Owusu',   nick: 'NANO99',     role: 'Left Back / FC26',      stats: ['83 SPD', '80 CRS'], color: '#ff8c00' },
-  { name: 'Zara Kamau',   nick: 'ZERO_Z',     role: 'Right Winger / FC26',   stats: ['88 DRB', '84 SHT'], color: '#00d4ff' },
-  { name: 'Emeka Obi',    nick: 'VENOM_E',    role: 'Attacking Mid / FC26',  stats: ['93 PAS', '91 ATK'], color: '#ffd700' },
-];
 
 const FIXTURES_DATA = [
   { id: 1, team1: 'University of Ghana',         team2: 'UPSA',                       game: 'FC26', date: 'Aug 19', time: '10:00 AM', status: 'upcoming', score: null },
@@ -153,6 +143,169 @@ const LEADERBOARD_DATA = [
   { rank: 6, team: 'Kumasi Technical University', abbr: 'KTU', color: '#ff8c00', matches: 0, wins: 0, losses: 0, points: 0 },
   { rank: 7, team: 'Pentecost University',        abbr: 'PU',  color: '#00ff88', matches: 0, wins: 0, losses: 0, points: 0 },
   { rank: 8, team: 'Accra Technical University', abbr: 'ATU', color: '#0057b7', matches: 0, wins: 0, losses: 0, points: 0 },
+];
+
+const ROSTERS_DATA = [
+  {
+    team: 'University of Ghana', abbr: 'UG', color: '#007a3d', logo: 'images/University of Ghana logo.png',
+    players: [
+      { num: 1,  name: 'Kwame Asante',       pos: 'GK'  }, { num: 2,  name: 'Kofi Boateng',       pos: 'DEF' },
+      { num: 3,  name: 'Ebo Mensah',          pos: 'DEF' }, { num: 4,  name: 'Nana Osei',           pos: 'DEF' },
+      { num: 5,  name: 'Kwabena Owusu',       pos: 'DEF' }, { num: 6,  name: 'Yaw Agyei',           pos: 'DEF' },
+      { num: 7,  name: 'Fiifi Amponsah',      pos: 'MID' }, { num: 8,  name: 'Kojo Amoah',          pos: 'MID' },
+      { num: 9,  name: 'Kweku Darko',         pos: 'MID' }, { num: 10, name: 'Paa Danso',            pos: 'MID' },
+      { num: 11, name: 'Kwesi Antwi',         pos: 'MID' }, { num: 12, name: 'Nii Kyei',            pos: 'MID' },
+      { num: 13, name: 'Kobe Adjei',          pos: 'MID' }, { num: 14, name: 'Yoofi Tetteh',        pos: 'ATT' },
+      { num: 15, name: 'Ade Quaye',           pos: 'ATT' }, { num: 16, name: 'Senam Lartey',        pos: 'ATT' },
+      { num: 17, name: 'Nii Ankrah',          pos: 'ATT' }, { num: 18, name: 'Oko Dodoo',           pos: 'ATT' },
+      { num: 19, name: 'Noel Korley',         pos: 'ATT' }, { num: 20, name: 'Tei Nortey',          pos: 'ATT' },
+      { num: 21, name: 'Fii Teye',            pos: 'MID' }, { num: 22, name: 'Duke Lamptey',        pos: 'MID' },
+      { num: 23, name: 'Karl Armah',          pos: 'DEF' }, { num: 24, name: 'Ben Ayertey',         pos: 'DEF' },
+      { num: 25, name: 'Sam Quartey',         pos: 'MID' }, { num: 26, name: 'Joe Amartey',         pos: 'DEF' },
+      { num: 27, name: 'Max Tagoe',           pos: 'GK'  }, { num: 28, name: 'Dan Nkrumah',         pos: 'MID' },
+      { num: 29, name: 'Ebo Asiedu',          pos: 'ATT' }, { num: 30, name: 'Ato Baffoe',          pos: 'GK'  },
+    ]
+  },
+  {
+    team: 'UPSA', abbr: 'UP', color: '#00d4ff', logo: 'images/UPSA logo.png',
+    players: [
+      { num: 1,  name: 'Michael Donkor',      pos: 'GK'  }, { num: 2,  name: 'Emmanuel Addo',       pos: 'DEF' },
+      { num: 3,  name: 'Francis Appiahene',   pos: 'DEF' }, { num: 4,  name: 'Daniel Frimpong',     pos: 'DEF' },
+      { num: 5,  name: 'Richard Peprah',      pos: 'DEF' }, { num: 6,  name: 'Joseph Poku',         pos: 'DEF' },
+      { num: 7,  name: 'Felix Sarkodie',      pos: 'MID' }, { num: 8,  name: 'Bernard Twum',        pos: 'MID' },
+      { num: 9,  name: 'Samuel Wiredu',       pos: 'MID' }, { num: 10, name: 'Patrick Yeboah',      pos: 'MID' },
+      { num: 11, name: 'Charles Asare',       pos: 'MID' }, { num: 12, name: 'Thomas Asempa',       pos: 'MID' },
+      { num: 13, name: 'Philip Asuman',       pos: 'MID' }, { num: 14, name: 'Peter Atta',          pos: 'ATT' },
+      { num: 15, name: 'Paul Awuah',          pos: 'ATT' }, { num: 16, name: 'Mark Ayim',           pos: 'ATT' },
+      { num: 17, name: 'Luke Baah',           pos: 'ATT' }, { num: 18, name: 'John Badu',           pos: 'ATT' },
+      { num: 19, name: 'Isaac Baffour',       pos: 'ATT' }, { num: 20, name: 'Henry Berko',         pos: 'ATT' },
+      { num: 21, name: 'George Boadu',        pos: 'MID' }, { num: 22, name: 'Frank Bonsu',         pos: 'MID' },
+      { num: 23, name: 'Eric Bonso',          pos: 'DEF' }, { num: 24, name: 'David Bosu',          pos: 'DEF' },
+      { num: 25, name: 'Christian Buabeng',   pos: 'MID' }, { num: 26, name: 'Albert Darkwah',      pos: 'DEF' },
+      { num: 27, name: 'Alex Doku',           pos: 'GK'  }, { num: 28, name: 'Andrew Domfeh',       pos: 'MID' },
+      { num: 29, name: 'Anthony Donkoh',      pos: 'ATT' }, { num: 30, name: 'Arnold Duah',         pos: 'GK'  },
+    ]
+  },
+  {
+    team: 'GH Media', abbr: 'GM', color: '#a855f7', logo: 'images/GH Media logo.png',
+    players: [
+      { num: 1,  name: 'Kweku Edusei',        pos: 'GK'  }, { num: 2,  name: 'Kwame Ennin',         pos: 'DEF' },
+      { num: 3,  name: 'Kofi Essel',          pos: 'DEF' }, { num: 4,  name: 'Kojo Ewool',          pos: 'DEF' },
+      { num: 5,  name: 'Kwabena Fosu',        pos: 'DEF' }, { num: 6,  name: 'Yaw Frimpong',        pos: 'DEF' },
+      { num: 7,  name: 'Fiifi Fynn',          pos: 'MID' }, { num: 8,  name: 'Paa Gyan',            pos: 'MID' },
+      { num: 9,  name: 'Kwesi Gyau',          pos: 'MID' }, { num: 10, name: 'Nii Hagan',           pos: 'MID' },
+      { num: 11, name: 'Ebo Hamid',           pos: 'MID' }, { num: 12, name: 'Tei Hesse',           pos: 'MID' },
+      { num: 13, name: 'Noel Inkoom',         pos: 'MID' }, { num: 14, name: 'Duke Jibril',         pos: 'ATT' },
+      { num: 15, name: 'Karl Joojo',          pos: 'ATT' }, { num: 16, name: 'Ben Jonah',           pos: 'ATT' },
+      { num: 17, name: 'Sam Jordan',          pos: 'ATT' }, { num: 18, name: 'Joe Kabutey',         pos: 'ATT' },
+      { num: 19, name: 'Max Kafui',           pos: 'ATT' }, { num: 20, name: 'Dan Kali',            pos: 'ATT' },
+      { num: 21, name: 'Ebo Kamara',          pos: 'MID' }, { num: 22, name: 'Ato Kante',           pos: 'MID' },
+      { num: 23, name: 'Kobe Karim',          pos: 'DEF' }, { num: 24, name: 'Yoofi Kasei',         pos: 'DEF' },
+      { num: 25, name: 'Senam Katey',         pos: 'MID' }, { num: 26, name: 'Nana Kena',           pos: 'DEF' },
+      { num: 27, name: 'Oko Kojo',            pos: 'GK'  }, { num: 28, name: 'Fii Komla',           pos: 'MID' },
+      { num: 29, name: 'Michael Koomson',     pos: 'ATT' }, { num: 30, name: 'Emmanuel Kpodo',      pos: 'GK'  },
+    ]
+  },
+  {
+    team: 'Central University', abbr: 'CU', color: '#ff3a3a', logo: 'images/Central University logo.png',
+    players: [
+      { num: 1,  name: 'Francis Kumi',        pos: 'GK'  }, { num: 2,  name: 'Daniel Labi',         pos: 'DEF' },
+      { num: 3,  name: 'Richard Ladzekpo',    pos: 'DEF' }, { num: 4,  name: 'Joseph Lamptey',      pos: 'DEF' },
+      { num: 5,  name: 'Felix Larbi',         pos: 'DEF' }, { num: 6,  name: 'Bernard Laryea',      pos: 'DEF' },
+      { num: 7,  name: 'Samuel Lartey',       pos: 'MID' }, { num: 8,  name: 'Patrick Lomotey',     pos: 'MID' },
+      { num: 9,  name: 'Charles Lotsu',       pos: 'MID' }, { num: 10, name: 'Thomas Manu',         pos: 'MID' },
+      { num: 11, name: 'Philip Marfo',        pos: 'MID' }, { num: 12, name: 'Peter Martey',        pos: 'MID' },
+      { num: 13, name: 'Paul Mensah',         pos: 'MID' }, { num: 14, name: 'Mark Mintah',         pos: 'ATT' },
+      { num: 15, name: 'Luke Mireku',         pos: 'ATT' }, { num: 16, name: 'John Moffat',         pos: 'ATT' },
+      { num: 17, name: 'Isaac Moro',          pos: 'ATT' }, { num: 18, name: 'Henry Mould',         pos: 'ATT' },
+      { num: 19, name: 'George Narh',         pos: 'ATT' }, { num: 20, name: 'Frank Nartey',        pos: 'ATT' },
+      { num: 21, name: 'Eric Nkrumah',        pos: 'MID' }, { num: 22, name: 'David Nkyi',          pos: 'MID' },
+      { num: 23, name: 'Christian Nortey',    pos: 'DEF' }, { num: 24, name: 'Albert Nsiah',        pos: 'DEF' },
+      { num: 25, name: 'Alex Nunoo',          pos: 'MID' }, { num: 26, name: 'Andrew Nyame',        pos: 'DEF' },
+      { num: 27, name: 'Anthony Nyanfur',     pos: 'GK'  }, { num: 28, name: 'Arnold Nyarko',       pos: 'MID' },
+      { num: 29, name: 'Kwame Nyarkoh',       pos: 'ATT' }, { num: 30, name: 'Kofi Nyarko-Mensah',  pos: 'GK'  },
+    ]
+  },
+  {
+    team: 'KNUST', abbr: 'KN', color: '#ffd700', logo: 'images/KNUST logo.png',
+    players: [
+      { num: 1,  name: 'Kojo Obeng',          pos: 'GK'  }, { num: 2,  name: 'Kwabena Obimpeh',     pos: 'DEF' },
+      { num: 3,  name: 'Yaw Ofori',           pos: 'DEF' }, { num: 4,  name: 'Fiifi Ofori-Atta',    pos: 'DEF' },
+      { num: 5,  name: 'Paa Ofosu',           pos: 'DEF' }, { num: 6,  name: 'Kwesi Ohemeng',       pos: 'DEF' },
+      { num: 7,  name: 'Nii Oheneba',         pos: 'MID' }, { num: 8,  name: 'Ebo Okyere',          pos: 'MID' },
+      { num: 9,  name: 'Tei Opoku',           pos: 'MID' }, { num: 10, name: 'Noel Opuni',          pos: 'MID' },
+      { num: 11, name: 'Duke Osei',           pos: 'MID' }, { num: 12, name: 'Karl Osei-Bonsu',     pos: 'MID' },
+      { num: 13, name: 'Ben Osei-Kusi',       pos: 'MID' }, { num: 14, name: 'Sam Otchere',         pos: 'ATT' },
+      { num: 15, name: 'Joe Oteng',           pos: 'ATT' }, { num: 16, name: 'Max Owiredu',         pos: 'ATT' },
+      { num: 17, name: 'Dan Owusu',           pos: 'ATT' }, { num: 18, name: 'Ebo Padmore',         pos: 'ATT' },
+      { num: 19, name: 'Ato Paitoo',          pos: 'ATT' }, { num: 20, name: 'Kobe Panford',        pos: 'ATT' },
+      { num: 21, name: 'Yoofi Poku',          pos: 'MID' }, { num: 22, name: 'Senam Pomaa',         pos: 'MID' },
+      { num: 23, name: 'Nana Prempeh',        pos: 'DEF' }, { num: 24, name: 'Oko Quarshie',        pos: 'DEF' },
+      { num: 25, name: 'Fii Quarcoo',         pos: 'MID' }, { num: 26, name: 'Michael Quartey',     pos: 'DEF' },
+      { num: 27, name: 'Emmanuel Quaye',      pos: 'GK'  }, { num: 28, name: 'Francis Quarshie',    pos: 'MID' },
+      { num: 29, name: 'Daniel Sarkodie',     pos: 'ATT' }, { num: 30, name: 'Richard Sarpong',     pos: 'GK'  },
+    ]
+  },
+  {
+    team: 'Kumasi Technical University', abbr: 'KTU', color: '#ff8c00', logo: 'images/Kumasi Technical University logo.png',
+    players: [
+      { num: 1,  name: 'Joseph Sarpong',      pos: 'GK'  }, { num: 2,  name: 'Felix Sasu',          pos: 'DEF' },
+      { num: 3,  name: 'Bernard Sekyere',     pos: 'DEF' }, { num: 4,  name: 'Samuel Siaw',         pos: 'DEF' },
+      { num: 5,  name: 'Patrick Sika',        pos: 'DEF' }, { num: 6,  name: 'Charles Simmons',     pos: 'DEF' },
+      { num: 7,  name: 'Thomas Somuah',       pos: 'MID' }, { num: 8,  name: 'Philip Sowah',        pos: 'MID' },
+      { num: 9,  name: 'Peter Steele',        pos: 'MID' }, { num: 10, name: 'Paul Sulemana',       pos: 'MID' },
+      { num: 11, name: 'Mark Tagoe',          pos: 'MID' }, { num: 12, name: 'Luke Takyi',          pos: 'MID' },
+      { num: 13, name: 'John Tanko',          pos: 'MID' }, { num: 14, name: 'Isaac Tawiah',        pos: 'ATT' },
+      { num: 15, name: 'Henry Tei',           pos: 'ATT' }, { num: 16, name: 'George Tekyi',        pos: 'ATT' },
+      { num: 17, name: 'Frank Tetteh',        pos: 'ATT' }, { num: 18, name: 'Eric Tieku',          pos: 'ATT' },
+      { num: 19, name: 'David Tuffour',       pos: 'ATT' }, { num: 20, name: 'Christian Turkson',   pos: 'ATT' },
+      { num: 21, name: 'Albert Twum',         pos: 'MID' }, { num: 22, name: 'Alex Twumasi',        pos: 'MID' },
+      { num: 23, name: 'Andrew Wiredu',       pos: 'DEF' }, { num: 24, name: 'Anthony Wuaku',       pos: 'DEF' },
+      { num: 25, name: 'Arnold Yaw',          pos: 'MID' }, { num: 26, name: 'Kwame Yeboah',        pos: 'DEF' },
+      { num: 27, name: 'Kofi Yirenkyi',       pos: 'GK'  }, { num: 28, name: 'Kojo Zakaria',        pos: 'MID' },
+      { num: 29, name: 'Kwabena Zandoh',      pos: 'ATT' }, { num: 30, name: 'Yaw Ziggah',          pos: 'GK'  },
+    ]
+  },
+  {
+    team: 'Pentecost University', abbr: 'PU', color: '#00ff88', logo: 'images/Pentecost University logo.png',
+    players: [
+      { num: 1,  name: 'Fiifi Abraham',       pos: 'GK'  }, { num: 2,  name: 'Paa Acquah',          pos: 'DEF' },
+      { num: 3,  name: 'Kwesi Acheampong',    pos: 'DEF' }, { num: 4,  name: 'Nii Acheson',         pos: 'DEF' },
+      { num: 5,  name: 'Ebo Ackah',           pos: 'DEF' }, { num: 6,  name: 'Tei Acquaah',         pos: 'DEF' },
+      { num: 7,  name: 'Noel Adabie',         pos: 'MID' }, { num: 8,  name: 'Duke Adarkwa',        pos: 'MID' },
+      { num: 9,  name: 'Karl Addo',           pos: 'MID' }, { num: 10, name: 'Ben Adepa',           pos: 'MID' },
+      { num: 11, name: 'Sam Adjetey',         pos: 'MID' }, { num: 12, name: 'Joe Adjorlolo',       pos: 'MID' },
+      { num: 13, name: 'Max Adua',            pos: 'MID' }, { num: 14, name: 'Dan Adusei',          pos: 'ATT' },
+      { num: 15, name: 'Ebo Afful',           pos: 'ATT' }, { num: 16, name: 'Ato Agbesi',          pos: 'ATT' },
+      { num: 17, name: 'Kobe Agyapong',       pos: 'ATT' }, { num: 18, name: 'Yoofi Agyare',        pos: 'ATT' },
+      { num: 19, name: 'Senam Ahenkorah',     pos: 'ATT' }, { num: 20, name: 'Nana Ahiable',        pos: 'ATT' },
+      { num: 21, name: 'Oko Ahiagble',        pos: 'MID' }, { num: 22, name: 'Fii Ahwoi',           pos: 'MID' },
+      { num: 23, name: 'Michael Akatey',      pos: 'DEF' }, { num: 24, name: 'Emmanuel Akotiah',    pos: 'DEF' },
+      { num: 25, name: 'Francis Akuamoah',    pos: 'MID' }, { num: 26, name: 'Daniel Akuffo',       pos: 'DEF' },
+      { num: 27, name: 'Richard Akwasi',      pos: 'GK'  }, { num: 28, name: 'Joseph Akwetey',      pos: 'MID' },
+      { num: 29, name: 'Felix Akyea',         pos: 'ATT' }, { num: 30, name: 'Bernard Akyeampong',  pos: 'GK'  },
+    ]
+  },
+  {
+    team: 'Accra Technical University', abbr: 'ATU', color: '#0057b7', logo: 'images/ATU lgog.png',
+    players: [
+      { num: 1,  name: 'Samuel Akyianu',      pos: 'GK'  }, { num: 2,  name: 'Patrick Amoabeng',    pos: 'DEF' },
+      { num: 3,  name: 'Charles Amoah',       pos: 'DEF' }, { num: 4,  name: 'Thomas Amoako',       pos: 'DEF' },
+      { num: 5,  name: 'Philip Amoh',         pos: 'DEF' }, { num: 6,  name: 'Peter Ampadu',        pos: 'DEF' },
+      { num: 7,  name: 'Paul Ampaabeng',      pos: 'MID' }, { num: 8,  name: 'Mark Ampaw',          pos: 'MID' },
+      { num: 9,  name: 'Luke Ampofoa',        pos: 'MID' }, { num: 10, name: 'John Amprobe',        pos: 'MID' },
+      { num: 11, name: 'Isaac Amponsem',      pos: 'MID' }, { num: 12, name: 'Henry Amreku',        pos: 'MID' },
+      { num: 13, name: 'George Amu',          pos: 'MID' }, { num: 14, name: 'Frank Amuguni',       pos: 'ATT' },
+      { num: 15, name: 'Eric Anaafi',         pos: 'ATT' }, { num: 16, name: 'David Anang',         pos: 'ATT' },
+      { num: 17, name: 'Christian Andoh',     pos: 'ATT' }, { num: 18, name: 'Albert Ankamah',      pos: 'ATT' },
+      { num: 19, name: 'Alex Ankobia',        pos: 'ATT' }, { num: 20, name: 'Andrew Ankoma',       pos: 'ATT' },
+      { num: 21, name: 'Anthony Ankomah',     pos: 'MID' }, { num: 22, name: 'Arnold Annan',        pos: 'MID' },
+      { num: 23, name: 'Kwame Annor',         pos: 'DEF' }, { num: 24, name: 'Kofi Anning',         pos: 'DEF' },
+      { num: 25, name: 'Kojo Annobil',        pos: 'MID' }, { num: 26, name: 'Kwabena Ansah',       pos: 'DEF' },
+      { num: 27, name: 'Yaw Antwi',           pos: 'GK'  }, { num: 28, name: 'Fiifi Anum',          pos: 'MID' },
+      { num: 29, name: 'Paa Anyan',           pos: 'ATT' }, { num: 30, name: 'Kwesi Apenteng',      pos: 'GK'  },
+    ]
+  },
 ];
 
 const STREAM_SCHEDULE = [
@@ -404,26 +557,73 @@ function renderTeams() {
 }
 
 // ============================================================
-// RENDER PLAYERS
+// RENDER ROSTERS
 // ============================================================
-function renderPlayers() {
-  const container = document.getElementById('players-grid');
-  container.innerHTML = PLAYERS_DATA.map(p => `
-    <div class="player-card">
-      <div class="player-avatar" style="background:${p.color}20;border-color:${p.color}40;color:${p.color}">
-        ${p.name.split(' ').map(n=>n[0]).join('')}
-      </div>
-      <div>
-        <div class="player-name">${p.name}</div>
-        <div class="player-nick">${p.nick}</div>
-        <div class="player-role">${p.role}</div>
-        <div class="player-stats">
-          ${p.stats.map(s => `<span class="stat-chip">${s}</span>`).join('')}
+const POS_COLORS = { GK: '#ffd700', DEF: '#00d4ff', MID: '#00ff88', ATT: '#ff3a3a' };
+
+function renderRosters() {
+  const container = document.getElementById('rosters-container');
+  container.innerHTML = ROSTERS_DATA.map((t, i) => `
+    <div class="roster-card" id="roster-${i}">
+      <button class="roster-header" onclick="toggleRoster(${i})" style="--team-color:${t.color}">
+        <div class="roster-header-left">
+          <div class="roster-team-logo" style="background:${t.color}20;border:1px solid ${t.color}40;">
+            <img src="${t.logo.replace(/ /g,'%20')}" alt="${t.name}" onerror="this.style.display='none'" />
+            <span class="roster-abbr" style="color:${t.color}">${t.abbr}</span>
+          </div>
+          <div>
+            <div class="roster-team-name">${t.name}</div>
+            <div class="roster-team-meta">
+              <span class="roster-badge" style="background:${t.color}20;color:${t.color};border:1px solid ${t.color}40">FC26</span>
+              <span class="roster-count">30 Players</span>
+            </div>
+          </div>
         </div>
+        <i data-lucide="chevron-down" class="roster-chevron" style="width:20px;height:20px;transition:transform 0.3s;"></i>
+      </button>
+      <div class="roster-body" id="roster-body-${i}">
+        <table class="roster-table">
+          <thead>
+            <tr><th>#</th><th>Player Name</th><th>Position</th></tr>
+          </thead>
+          <tbody>
+            ${t.players.map(p => `
+              <tr>
+                <td class="roster-num" style="color:${t.color}">${p.num}</td>
+                <td class="roster-name">${p.name}</td>
+                <td><span class="pos-badge" style="background:${POS_COLORS[p.pos]}20;color:${POS_COLORS[p.pos]};border:1px solid ${POS_COLORS[p.pos]}40">${p.pos}</span></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
       </div>
     </div>
   `).join('');
+  lucide.createIcons();
 }
+
+function toggleRoster(index) {
+  const body   = document.getElementById(`roster-body-${index}`);
+  const card   = document.getElementById(`roster-${index}`);
+  const icon   = card.querySelector('.roster-chevron');
+  const isOpen = card.classList.contains('open');
+
+  document.querySelectorAll('.roster-card.open').forEach(c => {
+    c.classList.remove('open');
+    c.querySelector('.roster-body').style.maxHeight = '0';
+    c.querySelector('.roster-chevron').style.transform = 'rotate(0deg)';
+  });
+
+  if (!isOpen) {
+    card.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+    icon.style.transform = 'rotate(180deg)';
+  }
+}
+
+// ============================================================
+// RENDER PLAYERS
+// ============================================================
 
 // ============================================================
 // RENDER FIXTURES
@@ -811,7 +1011,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render data
   renderGames();
   renderTeams();
-  renderPlayers();
+  renderRosters();
   renderFixtures();
   renderLeaderboard();
   renderStreamSchedule();
