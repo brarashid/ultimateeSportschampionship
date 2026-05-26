@@ -1571,85 +1571,94 @@
     }
 
     .teams-grid {
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       margin-bottom: 48px;
       position: relative;
       z-index: 1;
     }
 
-    .teams-grid::before,
-    .teams-grid::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .teams-grid::before {
-      left: 0;
-      background: linear-gradient(to right, var(--bg-primary), transparent);
-    }
-
-    .teams-grid::after {
-      right: 0;
-      background: linear-gradient(to left, var(--bg-primary), transparent);
-    }
-
-    .teams-track {
-      display: flex;
-      gap: 20px;
-      width: max-content;
-      animation: teams-scroll 28s linear infinite;
-    }
-
-    .teams-track:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes teams-scroll {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
     .team-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 20px 16px;
+      border-radius: var(--radius-lg);
+      padding: 0 0 24px;
       text-align: center;
       transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
     }
 
-    .team-card:hover { border-color: var(--border-strong); transform: translateY(-4px); }
+    .team-card:hover {
+      border-color: var(--team-clr, var(--border-strong));
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 0 1px var(--team-clr, transparent);
+    }
+
+    .team-card-accent {
+      height: 4px;
+      width: 100%;
+      background: var(--team-clr, var(--accent-cyan));
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      margin-bottom: 24px;
+    }
 
     .team-logo {
-      width: 90px;
-      height: 90px;
-      border-radius: 14px;
-      margin: 0 auto 14px;
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+      margin: 0 auto 16px;
       display: flex;
       align-items: center;
       justify-content: center;
+      background: var(--team-clr-bg, rgba(0, 212, 255, 0.15));
+      border: 2px solid var(--team-clr-border, rgba(0, 212, 255, 0.4));
+      padding: 10px;
+      position: relative;
+    }
+
+    .team-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .team-abbr-fallback {
       font-family: 'Orbitron', sans-serif;
-      font-size: 22px;
-      color: white;
-      background: rgba(255,255,255,0.15) !important;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--team-clr, var(--accent-cyan));
+      position: absolute;
+      display: none;
+    }
+
+    .team-logo img[style*="display: none"] ~ .team-abbr-fallback,
+    .team-logo img:not([src]) ~ .team-abbr-fallback {
+      display: block;
     }
 
     .team-name {
       font-family: 'Rajdhani', sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 700;
       color: var(--text-primary);
+      padding: 0 12px;
+      line-height: 1.3;
     }
 
-    .team-game { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+    .team-game-badge {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--team-clr, var(--accent-cyan));
+      background: var(--team-clr-badge-bg, rgba(0, 212, 255, 0.12));
+      border: 1px solid var(--team-clr-badge-border, rgba(0, 212, 255, 0.35));
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-top: 8px;
+    }
 
     /* ---- Team Rosters Section ---- */
     .rosters-section {
@@ -2767,6 +2776,7 @@
       .fixtures-leaderboard-grid { grid-template-columns: 1fr; }
       .stream-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
+      .teams-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 768px) {
@@ -2776,7 +2786,7 @@
       .section-header { margin-bottom: 40px; }
       .section-title { font-size: clamp(28px, 7vw, 48px); }
       .games-grid { grid-template-columns: 1fr; }
-      .teams-grid { overflow: hidden; }
+      .teams-grid { grid-template-columns: repeat(2, 1fr); }
       .players-grid { grid-template-columns: 1fr; }
       .news-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; gap: 24px; }

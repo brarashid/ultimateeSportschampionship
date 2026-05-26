@@ -542,18 +542,33 @@ function renderGames() {
 // ============================================================
 // RENDER TEAMS
 // ============================================================
+function hexToRgba(hex, alpha) {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
 function renderTeams() {
   const container = document.getElementById('teams-grid');
-  const cards = TEAMS_DATA.map(t => `
-    <div class="team-card">
-      <div class="team-logo" style="background:${t.color}20;border:1px solid ${t.color}40;">
-        <img src="${t.logo.replace(/ /g,'%20')}" alt="${t.name}" style="width:100%;height:100%;object-fit:contain;" onerror="this.replaceWith(document.createTextNode('${t.abbr}'))" />
+  container.innerHTML = TEAMS_DATA.map(t => `
+    <div class="team-card" style="
+      --team-clr:${t.color};
+      --team-clr-bg:${hexToRgba(t.color, 0.15)};
+      --team-clr-border:${hexToRgba(t.color, 0.4)};
+      --team-clr-badge-bg:${hexToRgba(t.color, 0.12)};
+      --team-clr-badge-border:${hexToRgba(t.color, 0.35)};
+    ">
+      <div class="team-card-accent"></div>
+      <div class="team-logo">
+        <img src="${t.logo.replace(/ /g,'%20')}" alt="${t.name}" onerror="this.style.display='none'" />
+        <span class="team-abbr-fallback">${t.abbr}</span>
       </div>
       <div class="team-name">${t.name}</div>
-      <div class="team-game">${t.game}</div>
+      <div class="team-game-badge">${t.game}</div>
     </div>
   `).join('');
-  container.innerHTML = `<div class="teams-track">${cards}${cards}</div>`;
 }
 
 // ============================================================
