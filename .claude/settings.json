@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\USER\\\\Desktop\\\\ultimateeSportschampionship\" -Recurse -Force | Select-Object -Property FullName | ForEach-Object { $_.FullName.Replace\\(\"c:\\\\Users\\\\USER\\\\Desktop\\\\ultimateeSportschampionship\", \".\"\\) } | Sort-Object)"
-    ]
-  }
-}
