@@ -3120,3 +3120,254 @@
       color: #fff;
       box-shadow: 0 0 20px rgba(0, 120, 200, 0.4), 0 4px 12px rgba(0,0,0,0.25);
     }
+
+    /* ============================================================
+       TOURNAMENT BRACKET — compact, inside leaderboard column
+    ============================================================ */
+
+    .tbc-wrap {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .tbc-section-label {
+      font-family: 'Orbitron', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tbc-round {
+      margin-bottom: 4px;
+    }
+
+    .tbc-rnd-badge {
+      font-family: 'Orbitron', monospace;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      background: rgba(0,212,255,0.07);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 20px;
+      padding: 3px 10px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .tbc-rnd-sf {
+      color: rgba(0,212,255,0.65);
+      background: rgba(0,212,255,0.04);
+      border-color: rgba(0,212,255,0.12);
+    }
+
+    .tbc-rnd-final {
+      color: var(--accent-gold);
+      background: rgba(255,215,0,0.09);
+      border-color: rgba(255,215,0,0.3);
+      box-shadow: 0 0 8px rgba(255,215,0,0.1);
+    }
+
+    .tbc-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .tbc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .tbc-card:hover {
+      border-color: rgba(0,212,255,0.4);
+      box-shadow: 0 0 12px rgba(0,212,255,0.1);
+    }
+
+    .tbc-card.tbc-tbd {
+      border-color: rgba(255,215,0,0.18);
+    }
+
+    .tbc-card.tbc-tbd:hover {
+      border-color: rgba(255,215,0,0.4);
+      box-shadow: 0 0 12px rgba(255,215,0,0.1);
+    }
+
+    .tbc-t {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 7px;
+      border-left: 2px solid var(--tc, rgba(0,212,255,0.4));
+      min-height: 32px;
+    }
+
+    .tbc-vs-row {
+      font-family: 'Orbitron', monospace;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 2px 0;
+      background: rgba(255,255,255,0.02);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tbc-logo {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .tbc-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .tbc-tbd-logo {
+      background: rgba(255,215,0,0.06);
+      border: 1px dashed rgba(255,215,0,0.38);
+      font-size: 11px;
+      font-weight: 900;
+      color: rgba(255,215,0,0.65);
+    }
+
+    .tbc-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--text-primary);
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tbc-name-tbd {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .tbc-sd {
+      font-family: 'Orbitron', monospace;
+      font-size: 8px;
+      font-weight: 700;
+      color: var(--tc, var(--accent-cyan));
+      flex-shrink: 0;
+      opacity: 0.8;
+    }
+
+    .tbc-connector-down {
+      text-align: center;
+      color: var(--accent-cyan);
+      font-size: 13px;
+      padding: 5px 0;
+      opacity: 0.55;
+    }
+
+    /* Grand Final block */
+    .tbc-final {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 16px 12px 18px;
+      background: rgba(255,215,0,0.04);
+      border: 1px solid rgba(255,215,0,0.18);
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tbc-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 45%, rgba(255,215,0,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .tbc-final-logo {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 2px solid rgba(255,215,0,0.5);
+      background: var(--bg-card);
+      padding: 3px;
+      position: relative;
+      z-index: 1;
+      animation: tbc-logo-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes tbc-logo-glow {
+      0%, 100% { filter: drop-shadow(0 0 6px rgba(255,215,0,0.5)); }
+      50%       { filter: drop-shadow(0 0 14px rgba(255,215,0,0.9)); }
+    }
+
+    .tbc-finalists {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tbc-finalist {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.05);
+      border: 1px dashed rgba(255,215,0,0.35);
+      border-radius: 4px;
+      padding: 3px 9px;
+    }
+
+    .tbc-final-vs {
+      font-family: 'Orbitron', monospace;
+      font-size: 9px;
+      font-weight: 900;
+      color: var(--accent-gold);
+      text-shadow: 0 0 6px rgba(255,215,0,0.8);
+    }
+
+    /* Light mode */
+    [data-theme="light"] .tbc-card {
+      background: #fff;
+      border-color: rgba(0,100,180,0.18);
+    }
+    [data-theme="light"] .tbc-card:hover {
+      border-color: rgba(0,100,180,0.4);
+    }
+    [data-theme="light"] .tbc-card.tbc-tbd {
+      border-color: rgba(160,110,0,0.22);
+    }
+    [data-theme="light"] .tbc-final {
+      background: rgba(160,110,0,0.04);
+      border-color: rgba(160,110,0,0.2);
+    }
+    [data-theme="light"] .tbc-final-logo { background: #fff; }
+
