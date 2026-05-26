@@ -1590,12 +1590,12 @@
 
     .teams-grid::before {
       left: 0;
-      background: linear-gradient(to right, var(--bg-section), transparent);
+      background: linear-gradient(to right, var(--bg-primary), transparent);
     }
 
     .teams-grid::after {
       right: 0;
-      background: linear-gradient(to left, var(--bg-section), transparent);
+      background: linear-gradient(to left, var(--bg-primary), transparent);
     }
 
     .teams-track {
@@ -2381,16 +2381,25 @@
     }
 
     .contact-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: rgba(0, 212, 255, 0.08);
-      border: 1px solid rgba(0, 212, 255, 0.15);
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.42), rgba(168, 85, 247, 0.36));
+      border: 1px solid rgba(0, 212, 255, 0.7);
+      box-shadow: 0 0 18px rgba(0, 212, 255, 0.35), inset 0 1px 0 rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--accent-cyan);
+      color: #fff;
+      transition: all var(--transition);
+    }
+
+    .contact-item:hover .contact-icon {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.62), rgba(168, 85, 247, 0.52));
+      border-color: rgba(0, 212, 255, 0.9);
+      box-shadow: 0 0 28px rgba(0, 212, 255, 0.5), inset 0 1px 0 rgba(255,255,255,0.15);
+      transform: scale(1.08);
     }
 
     .contact-item-info h4 {
@@ -2409,26 +2418,28 @@
       margin: 0;
     }
 
-    .social-links { display: flex; gap: 10px; }
+    .social-links { display: flex; gap: 10px; flex-wrap: wrap; }
 
     .social-link {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-card);
-      border: 1px solid var(--border);
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #0d1e3a, #16204a);
+      border: 1px solid rgba(0, 212, 255, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-secondary);
+      color: #c8d8f8;
       transition: all var(--transition);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.4);
     }
 
     .social-link:hover {
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.4), rgba(168, 85, 247, 0.35));
       border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      box-shadow: var(--glow-cyan);
-      transform: translateY(-2px);
+      color: #fff;
+      box-shadow: var(--glow-cyan), 0 4px 16px rgba(0,0,0,0.4);
+      transform: translateY(-3px) scale(1.1);
     }
 
     .contact-form-wrap {
@@ -2830,4 +2841,124 @@
       .btn-primary, .btn-secondary { padding: 10px 16px; font-size: 11px; }
       .hero-content { padding: 80px 12px 50px; }
       .container { padding: 0 12px; }
+    }
+
+    /* ============================================================
+       LIGHT MODE COMPONENT OVERRIDES
+       The hero section always has a dark background image, so its
+       text and child elements must stay light in both themes.
+       All other hardcoded dark/white rgba values are overridden here.
+    ============================================================ */
+
+    /* Hero text — hero bg is always a dark image overlay, keep text light */
+    [data-theme="light"] #home .hero-title .line1 {
+      color: #f0f4ff;
+    }
+
+    [data-theme="light"] #home .hero-tagline {
+      color: rgba(240, 244, 255, 0.88);
+    }
+
+    [data-theme="light"] #home .hero-stat-label,
+    [data-theme="light"] #home .countdown-label,
+    [data-theme="light"] #home .countdown-seg {
+      color: rgba(240, 244, 255, 0.65);
+    }
+
+    [data-theme="light"] #home .countdown-unit {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    [data-theme="light"] #home .hero-game-tag {
+      color: rgba(240, 244, 255, 0.85);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    [data-theme="light"] #home .hero-game-tag.featured {
+      background: rgba(255, 215, 0, 0.12);
+      border-color: rgba(255, 215, 0, 0.35);
+      color: var(--accent-gold);
+    }
+
+    [data-theme="light"] #home .ticker-item {
+      color: rgba(240, 244, 255, 0.82);
+    }
+
+    /* Hero sponsor strip — hardcoded dark background */
+    [data-theme="light"] .hero-sponsors {
+      background: rgba(210, 225, 248, 0.88);
+      border-top-color: rgba(0, 100, 180, 0.18);
+    }
+
+    [data-theme="light"] .sponsor-logo {
+      background: rgba(0, 0, 0, 0.04);
+      color: var(--text-secondary);
+    }
+
+    [data-theme="light"] .sponsor-logo:hover {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    /* Game card overlay — hardcoded dark gradient */
+    [data-theme="light"] .game-overlay {
+      background: linear-gradient(to top, rgba(210, 225, 248, 0.8) 0%, transparent 60%);
+    }
+
+    /* Teams section — nearly transparent bg/border in light mode */
+    [data-theme="light"] .teams-section {
+      background: rgba(0, 60, 140, 0.04);
+      border-color: rgba(0, 100, 180, 0.12);
+    }
+
+    /* Roster table — white-alpha separators/hovers invisible on white bg */
+    [data-theme="light"] .roster-table thead tr {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="light"] .roster-table td {
+      border-top-color: rgba(0, 0, 0, 0.07);
+    }
+
+    [data-theme="light"] .roster-table tbody tr:hover {
+      background: rgba(0, 100, 180, 0.05);
+    }
+
+    [data-theme="light"] .roster-header:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    /* Fixture team logo — white-alpha bg hard to see on light cards */
+    [data-theme="light"] .fixture-team-logo {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    /* Contact icons in light mode */
+    [data-theme="light"] .contact-icon {
+      background: linear-gradient(135deg, rgba(0, 100, 180, 0.55), rgba(100, 40, 180, 0.45));
+      border-color: rgba(0, 120, 200, 0.75);
+      box-shadow: 0 0 16px rgba(0, 120, 200, 0.3), inset 0 1px 0 rgba(255,255,255,0.3);
+      color: #fff;
+    }
+
+    [data-theme="light"] .contact-item:hover .contact-icon {
+      background: linear-gradient(135deg, rgba(0, 100, 180, 0.75), rgba(100, 40, 180, 0.65));
+      border-color: rgba(0, 120, 200, 0.95);
+      box-shadow: 0 0 24px rgba(0, 120, 200, 0.45), inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+
+    /* Social icons in light mode */
+    [data-theme="light"] .social-link {
+      background: linear-gradient(135deg, #1a2e55, #22296a);
+      border-color: rgba(0, 120, 200, 0.55);
+      color: #c8d8f8;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    [data-theme="light"] .social-link:hover {
+      background: linear-gradient(135deg, rgba(0, 120, 200, 0.75), rgba(100, 40, 180, 0.65));
+      border-color: rgba(0, 120, 200, 0.9);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 120, 200, 0.4), 0 4px 12px rgba(0,0,0,0.25);
     }
