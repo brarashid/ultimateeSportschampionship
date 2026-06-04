@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir \"c:\\\\Users\\\\USER\\\\Desktop\\\\ultimateeSportschampionship\\\\images\" /b)"
+      "Bash(dir \"c:\\\\Users\\\\USER\\\\Desktop\\\\ultimateeSportschampionship\\\\images\" /b)",
+      "PowerShell(Copy-Item \"c:\\\\Users\\\\USER\\\\Desktop\\\\ultimateeSportschampionship\\\\images\\\\Ultimateesports logo.jpeg\" \"c:\\\\Users\\\\USER\\\\Desktop\\\\ultimateeSportschampionship\\\\favicon.jpg\")"
     ]
   }
 }
