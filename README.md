@@ -13,7 +13,7 @@ Africa's premier esports tournament website. Built as a fully static, single-pag
 | **Location** | Accra, Ghana |
 | **Established** | 2024 |
 | **Prize Pool** | ₵50,000 |
-| **Tournament Date** | August 20, 2026 |
+| **Tournament Date** | June 20, 2026 |
 | **Registration Deadline** | July 15, 2026 |
 
 ---
