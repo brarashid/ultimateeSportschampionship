@@ -3124,6 +3124,14 @@
       background: rgba(0, 0, 0, 0.08);
     }
 
+    [data-theme="light"] .hero-sponsors .sponsor-logo img[src="images/corki.jpeg"],
+    [data-theme="light"] .reg-sponsor-item img[src="images/corki.jpeg"] {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
     /* Game card overlay — hardcoded dark gradient */
     [data-theme="light"] .game-overlay {
       background: linear-gradient(to top, rgba(210, 225, 248, 0.8) 0%, transparent 60%);
